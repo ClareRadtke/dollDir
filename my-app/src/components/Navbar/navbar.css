@@ -1,0 +1,31 @@
+.Navbar {
+  width: 220px;
+}
+
+.Navbar ul {  
+  border: 2px solid teal;
+  list-style-position: outside;
+  padding: 0;
+}
+
+.Navbar ul li {  
+  text-align: left;
+  list-style: none;
+  padding: 5px;  
+}
+
+li a {
+  padding-left: 20px;
+  text-decoration: none;
+  font-weight: bold;
+  color: black; 
+}
+
+.genericInfo {  
+  background-color: rgba(0, 128, 128, .6);
+}
+
+.genericInfo a {
+  font-weight: normal;
+  color: white;
+}

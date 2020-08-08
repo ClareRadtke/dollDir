@@ -1,0 +1,31 @@
+.DollList {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  grid-gap: 10px;
+}
+
+.DollItem {
+  height: 300px;
+  background-repeat: no-repeat;
+  background-size: cover;
+  text-decoration: none;  
+}
+
+.DollItem span {
+  position: relative;
+  top: 267px;
+  left: 10px;
+  padding: 2.5px 15px;
+  font-weight: bold;
+  background-color: white;
+  text-decoration: none;
+  border-radius: 10px;
+  color: black;  
+}
+
+.DollItem span:focus, .DollItem span:hover {
+  color: white;
+  background-color: rgb(0, 128, 128, .7);
+}
+
+
