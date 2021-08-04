@@ -1,0 +1,9 @@
+.content-container {
+  width: 70vw;
+  height: 100vh;
+  background-color: rgb(4, 89, 66);
+  margin: 0 0;
+  display: flex;
+  flex-flow: column nowrap;
+  align-self: flex-end;
+}

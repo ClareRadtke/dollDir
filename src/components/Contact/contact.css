@@ -1,0 +1,79 @@
+.contact-form {
+  display: flex;
+  flex-flow: column nowrap;
+  align-items: center;
+  background-color: rgb(124, 95, 160);
+  margin: 2em;
+  padding: 2em 2em;
+}
+.header {
+  display: flex;
+  flex-flow: column nowrap;
+  align-items: center;
+}
+
+.header h1 {
+  font-size: calc(2em + 0.5vw);
+}
+
+.header p {
+  font-size: calc(1em + 0.3vw);
+}
+
+label {
+  margin-right: 0.5em;
+  font-size: calc(1em + 0.5vw);
+  width: 100%;
+  margin: 0.5em 0;
+}
+
+input,
+textarea {
+  line-height: 1.5;
+  font-size: calc(1em + 0.5vw);
+  width: calc(400px + 0.5vw);
+}
+
+textarea {
+  /* max-width: set to the be the main container width - 1em; */
+}
+
+.firstname-container,
+.lastname-container,
+.email-container,
+.message-container {
+  display: flex;
+  flex-flow: column nowrap;
+  margin: 0.5em 0;
+}
+
+.button {
+  font-size: calc(1em + 0.5vw);
+  display: flex;
+  border: none;
+  padding: 0.5rem 1rem;
+  border-radius: 0.25rem;
+  margin: 0.5rem 2em;
+  background: mistyrose;
+  color: black;
+  /* font-family: "Nunito", sans-serif; */
+  /* font-weight: bold; */
+  cursor: pointer;
+  text-align: center;
+  align-self: center;
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  line-height: 1;
+  text-decoration: none;
+  list-style: none;
+}
+
+.button.signup {
+  /* background: mistyrose;
+  color: black; */
+}
+
+.button.cancel {
+  /* background: mistyrose;
+  color: black; */
+}

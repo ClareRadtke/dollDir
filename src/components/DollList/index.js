@@ -16,3 +16,5 @@ export function DollList(props) {
     </div>
   );
 }
+
+export { dollData } from "./data";

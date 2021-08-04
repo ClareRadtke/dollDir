@@ -1,9 +1,4 @@
-import React from "react";
-
-import { DollList } from "./components/DollList";
-import { Navbar } from "./components/Navbar/navbar.js";
-
-const dollData = [
+export const dollData = [
   { name: "Aurelia", photo: "http://placekitten.com/200/200", id: "aurelia" },
   { name: "Somni", photo: "http://placekitten.com/100/200", id: "somni" },
   { name: "Kiera", photo: "http://placekitten.com/200/200", id: "kiera" },
@@ -20,15 +15,3 @@ const dollData = [
     id: "smart-doll",
   },
 ];
-
-function App() {
-  return (
-    <div className="App">
-      <h1>Doll Directory</h1>
-      <Navbar />
-      <DollList dolls={dollData} />
-    </div>
-  );
-}
-
-export default App;

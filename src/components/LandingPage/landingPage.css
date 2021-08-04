@@ -1,0 +1,21 @@
+/* default styling */
+
+p,
+a {
+  line-height: 1.5;
+}
+
+.capability-container {
+  height: 12em;
+  display: flex;
+  flex-flow: row nowrap;
+  justify-content: space-around;
+  align-items: center;
+  margin: 1em 1em;
+  background-color: rgb(200, 159, 239);
+}
+
+.signup.button {
+  text-decoration: none;
+  color: black;
+}

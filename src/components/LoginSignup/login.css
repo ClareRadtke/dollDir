@@ -1,0 +1,79 @@
+.signup-form {
+  display: flex;
+  flex-flow: column nowrap;
+  align-items: center;
+  background-color: rgb(124, 95, 160);
+  margin: 2em;
+  padding: 2em 2em;
+}
+
+.header h1 {
+  font-size: calc(2em + 0.5vw);
+}
+
+label {
+  margin-right: 0.5em;
+  font-size: calc(1em + 0.5vw);
+}
+
+input {
+  line-height: 1.5;
+  font-size: calc(1em + 0.5vw);
+}
+
+.email-container,
+.password-container {
+  display: flex;
+  flex-flow: column nowrap;
+  margin: 0.5em 0;
+}
+
+.button-container {
+  margin: 1em 1em 2em;
+  display: flex;
+  flex-flow: row wrap;
+  align-items: center;
+  justify-content: center;
+}
+
+.button {
+  font-size: calc(1em + 0.5vw);
+  display: flex;
+  border: none;
+  padding: 0.5rem 1rem;
+  border-radius: 0.25rem;
+  margin: 0.5rem 2em 1em;
+  background: mistyrose;
+  color: black;
+  /* font-family: "Nunito", sans-serif; */
+  /* font-weight: bold; */
+  cursor: pointer;
+  text-align: center;
+  align-self: center;
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  line-height: 1;
+  text-decoration: none;
+  list-style: none;
+}
+
+.button.login {
+  /* background: mistyrose;
+  color: black; */
+  /* margin-right: 3em; */
+}
+
+.button.signup {
+  /* background: mistyrose;
+  color: black; */
+}
+
+.button.cancel {
+  /* background: mistyrose;
+  color: black; */
+  margin-left: 1.5em;
+}
+.button-break {
+  flex-basis: 100%;
+  height: 0;
+}

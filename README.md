@@ -1,3 +1,42 @@
+# Doll Directory
+
+A website created for the doll customising community, bringing the different aspects of the hobby together
+
+## User Story
+
+AS A doll customiser
+I WANT a place where I can see and post doll content
+SO THAT I don't have to access multiple apps/sites
+
+## MVP
+
+A website that I can upload photos and written posts to and look at other Users photos and written posts.
+
+DB: MongoDB
+API: GraphQL
+Name: Doll Directory
+Concept:
+A website for the Doll Customising community.
+You will be able to select if your interest is in Ball Jointed Dolls (Artist sculpted resin or vinyl dolls),
+One Of A Kind Custom Playline Dolls (for example: barbie, monster high, rainbow high dolls - dolls that can be brought in toystores) or both and the site will tailor its content for your preference.
+The home page will have a feed of the most recent photos and blogs.
+One Of A Kind Custom Playline Doll Users:
+Users will be able to post blogs and photos and have a personal dashboard (similar concept to instagram).
+Directory of playline dolls, showing factory fullset, blank dolls, wiped faces - users can submit additional dolls.
+
+Ball Jointed Doll Users:
+Users will be able to post blogs and photos and have a personal dashboard (similar concept to instagram).
+
+Artists will be able to record sales, buyers, serial numbers and additional details for legitimacy reference in the secondhand market.
+Buyers can submit to artists if they have purchased a secondhand doll with the details for addition to the sales records and make requests to the artist for confirmation of legitimacy prior to purchase.
+
+Future state:
+direct messaging,
+auctions/stores,
+short video uploads,
+Directory of BJD Artist dolls - sculpt, artist, genre - need artist permissions/participation to post.
+BJD dimensions/sizing.
+
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
 ## Available Scripts

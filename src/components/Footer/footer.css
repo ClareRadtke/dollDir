@@ -1,0 +1,31 @@
+.footer {
+  width: 30vw;
+  height: 10vh;
+  /* background-color: rgba(0, 128, 128, 0.6); */
+  display: flex;
+  align-items: center;
+}
+
+.footer ul {
+  padding: 0;
+  margin: 0;
+}
+
+.footer-link {
+  border-bottom: 5px solid transparent;
+  text-align: left;
+  list-style: none;
+  padding: 0;
+  padding-bottom: 0;
+}
+
+.footer-link a {
+  color: white;
+  padding-left: 1.5em;
+  text-decoration: none;
+  font-weight: bold;
+}
+
+.active {
+  border-bottom: 5px solid rgb(92, 10, 169);
+}
