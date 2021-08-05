@@ -1,0 +1,38 @@
+:root {
+  /* Primary colors 60% */
+  --richBlack: #0c0d12;
+  --platinum: #ebebeb;
+  --mountbattenPink: #987f95;
+  /* Secondary color 30% */
+
+  /* Pop/CTA colors 10% */
+
+  /* Border */
+}
+
+p,
+a {
+  line-height: 1.5;
+}
+
+.capabilityContainer {
+  height: 12em;
+  display: flex;
+  flex-flow: row nowrap;
+  justify-content: space-around;
+  align-items: center;
+  margin: 1em 1em;
+  background-color: var(--mountbattenPink);
+  color: var(--richBlack);
+}
+
+.signup.button {
+  text-decoration: none;
+  padding: 0.5rem 1rem;
+  border-radius: 0.25rem;
+  background: var(--platinum);
+  color: var(--richBlack);
+  border: 3px solid var(--richBlack);
+  margin-left: 1.5em;
+  font-weight: bold;
+}

@@ -1,12 +1,12 @@
 import React from "react";
 // import { Switch, Route } from "react-router-dom";
-import "./navbar.css";
+import styles from "./navbar.module.css";
 
 // import { Signup } from "../LoginSignup/signup";
 
 export function Link(props) {
   return (
-    <li className={props.active ? "active" : "nav-link"}>
+    <li className={props.active ? `${styles.active}` : `${styles.navLink}`}>
       <a href={props.to}>{props.children}</a>
     </li>
   );
@@ -18,7 +18,7 @@ export function Link(props) {
 
 export function Navbar(props) {
   return (
-    <nav className="navbar">
+    <nav className={styles.navbar}>
       <ul>
         <Link to="/login">login</Link>
         <Link to="/signup">signup</Link>

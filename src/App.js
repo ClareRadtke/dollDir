@@ -1,6 +1,6 @@
 import React from "react";
-// import { Switch, Route } from "react-router-dom";
-import "./App.css";
+import { Route } from "react-router-dom";
+import styles from "./App.module.css";
 
 import { Navbar } from "./components/Navbar/navbar.js";
 import { MainContent } from "./components/MainContent/index";
@@ -9,16 +9,18 @@ import { Footer } from "./components/Footer/footer";
 function App() {
   return (
     <>
-      <div className="desktop-nav">
+      <div className={styles.desktopNav}>
         <Navbar />
-        <h1 className="heading">
+        <a href="/" className={styles.heading}>
           Doll <br />
           Directory
-        </h1>
+        </a>
         <Footer />
       </div>
 
-      <MainContent />
+      <Route path="/">
+        <MainContent />
+      </Route>
     </>
   );
 }

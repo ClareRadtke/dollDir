@@ -1,0 +1,35 @@
+:root {
+  /* Primary colors 60% */
+  --richBlack: #0c0d12;
+  --platinum: #ebebeb;
+  --mountbattenPink: #987f95;
+  /* Secondary color 30% */
+
+  /* Pop/CTA colors 10% */
+
+  /* Border */
+}
+
+.aboutContainer {
+  display: flex;
+  flex-flow: column nowrap;
+  justify-content: flex-start;
+  align-items: center;
+  margin: 1em 1em;
+  background-color: var(--platinum);
+  height: calc(100vh - 2em);
+}
+.header {
+  margin: 2em 0 0;
+}
+.header h1 {
+  font-size: calc(2em + 0.5vw);
+  color: var(--richBlack);
+}
+.aboutContent {
+  margin: 0 4em;
+}
+.aboutContent p {
+  font-size: calc(1em + 0.5vw);
+  color: var(--richBlack);
+}

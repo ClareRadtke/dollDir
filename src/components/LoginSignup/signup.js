@@ -1,17 +1,17 @@
 import React from "react";
-import "./signup.css";
+import styles from "./signup.module.css";
 
 export function Signup(props) {
   return (
-    <form className="signup-form">
-      <div className="header">
+    <form className={styles.signupForm}>
+      <div className={styles.header}>
         <h1>Signup</h1>
       </div>
-      <div className="username-container">
+      <div className={styles.usernameContainer}>
         <label htmlFor="username">Username:</label>
         <input type="text" id="username" name="username" required />
       </div>
-      <div className="email-container">
+      <div className={styles.emailContainer}>
         <label htmlFor="email">Email:</label>
         <input
           id="email"
@@ -21,7 +21,7 @@ export function Signup(props) {
           pattern=".+@.+\..+"
         />
       </div>
-      <div className="password-container">
+      <div className={styles.passwordContainer}>
         <label htmlFor="password">Password (8 characters minimum):</label>
         <input
           type="password"
@@ -31,16 +31,16 @@ export function Signup(props) {
           required
         />
       </div>
-      <div className="button-container">
+      <div className={styles.buttonContainer}>
         <button
           type="submit"
           value="sign-up"
           id="sign-up"
-          className="button signup"
+          className={`${styles.button} ${styles.signup}`}
         >
           Signup
         </button>
-        <a href="/" className="button cancel">
+        <a href="/" className={`${styles.button} ${styles.cancel}`}>
           Cancel
         </a>
       </div>

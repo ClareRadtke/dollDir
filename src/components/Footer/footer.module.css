@@ -1,3 +1,15 @@
+:root {
+  /* Primary colors 60% */
+  --richBlack: #0c0d12;
+  --platinum: #ebebeb;
+
+  /* Secondary color 30% */
+
+  /* Pop/CTA colors 10% */
+
+  /* Border */
+}
+
 .footer {
   width: 30vw;
   height: 10vh;
@@ -11,7 +23,7 @@
   margin: 0;
 }
 
-.footer-link {
+.footerLink {
   border-bottom: 5px solid transparent;
   text-align: left;
   list-style: none;
@@ -19,8 +31,8 @@
   padding-bottom: 0;
 }
 
-.footer-link a {
-  color: white;
+.footerLink a {
+  color: var(--platinum);
   padding-left: 1.5em;
   text-decoration: none;
   font-weight: bold;

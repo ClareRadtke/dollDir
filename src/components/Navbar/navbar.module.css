@@ -1,5 +1,13 @@
-.desktop-nav {
-  max-width: calc(180px + 4em);
+:root {
+  /* Primary colors 60% */
+  --richBlack: #0c0d12;
+  --platinum: #ebebeb;
+  --mountbattenPink: #987f95;
+  /* Secondary color 30% */
+
+  /* Pop/CTA colors 10% */
+
+  /* Border */
 }
 
 .navbar {
@@ -14,7 +22,7 @@
   margin: 0;
 }
 
-.nav-link {
+.navLink {
   border-bottom: 5px solid transparent;
   text-align: left;
   list-style: none;
@@ -22,13 +30,13 @@
   padding-bottom: 0;
 }
 
-.nav-link a {
-  color: white;
+.navLink a {
+  color: var(--platinum);
   padding-left: 1.5em;
   text-decoration: none;
   font-weight: bold;
 }
 
 .active {
-  border-bottom: 5px solid rgb(92, 10, 169);
+  border-bottom: 5px solid var(--platinum);
 }

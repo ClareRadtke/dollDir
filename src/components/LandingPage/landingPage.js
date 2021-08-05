@@ -1,12 +1,12 @@
 import React from "react";
-import "./landingPage.css";
+import styles from "./landingPage.module.css";
 
 export function Content(props) {
   return (
-    <div className="capability-container">
-      <p className="hobbyType">{props.hobbyType}</p>
+    <div className={styles.capabilityContainer}>
+      <p className={styles.hobbyType}>{props.hobbyType}</p>
       <p>{props.children}</p>
-      <a href={props.to} className="button signup">
+      <a href={props.to} className={`${styles.button} ${styles.signup}`}>
         {props.cta}
       </a>
     </div>

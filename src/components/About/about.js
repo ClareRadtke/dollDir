@@ -1,14 +1,14 @@
 import React from "react";
-import "./about.css";
+import styles from "./about.module.css";
 
 export function About(props) {
   return (
     <>
-      <div className="about-container">
-        <div className="header">
+      <div className={styles.aboutContainer}>
+        <div className={styles.header}>
           <h1>About</h1>
         </div>
-        <div className="about-content">
+        <div className={styles.aboutContent}>
           <p>
             The Doll Directory is a passion project, created to combine as many
             needs and wants within the doll customising community as possible.

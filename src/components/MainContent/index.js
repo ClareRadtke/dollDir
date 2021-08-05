@@ -1,6 +1,6 @@
 import React from "react";
 import { Route } from "react-router-dom";
-import "./index.css";
+import styles from "./index.module.css";
 
 // Page imports
 import { LandingPageContent } from "../LandingPage/landingPage";
@@ -8,19 +8,11 @@ import { Signup } from "../LoginSignup/signup";
 import { Login } from "../LoginSignup/login";
 import { Contact } from "../Contact/contact";
 import { About } from "../About/about";
-// import { DollList, dollData } from "../DollList/index";
-// { <DollList dolls={dollData} /> }
-
-// https://reactrouter.com/
-
-// let Component = null;
-// if (window.location.href === "/") Component = LandingPage;
-// if (window.location.href === "/about") Component = AboutPage;
-// if (window.location.href === "/contact") Component = ContactPage;
+import { Home } from "../Home/home";
 
 export function MainContent(props) {
   return (
-    <div className="content-container">
+    <div className={styles.contentContainer}>
       <Route path="/signup">
         <Signup />
       </Route>
@@ -35,6 +27,10 @@ export function MainContent(props) {
 
       <Route path="/about">
         <About />
+      </Route>
+
+      <Route path="/home">
+        <Home />
       </Route>
 
       <Route exact path="/">

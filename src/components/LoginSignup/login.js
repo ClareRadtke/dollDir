@@ -1,13 +1,13 @@
 import React from "react";
-import "./login.css";
+import styles from "./login.module.css";
 
 export function Login(props) {
   return (
-    <form className="signup-form">
-      <div className="header">
+    <form className={styles.signupForm}>
+      <div className={styles.header}>
         <h1>Login</h1>
       </div>
-      <div className="email-container">
+      <div className={styles.emailContainer}>
         <label htmlFor="email">Email:</label>
         <input
           id="email"
@@ -17,7 +17,7 @@ export function Login(props) {
           pattern=".+@.+\..+"
         />
       </div>
-      <div className="password-container">
+      <div className={styles.passwordContainer}>
         <label htmlFor="password">Password:</label>
         <input
           type="password"
@@ -27,15 +27,20 @@ export function Login(props) {
           required
         />
       </div>
-      <div className="button-container">
-        <button type="submit" value="login" id="login" className="button login">
+      <div className={styles.buttonContainer}>
+        <button
+          type="submit"
+          value="login"
+          id="login"
+          className={`${styles.button} ${styles.login}`}
+        >
           Login
         </button>
-        <a href="/" className="button cancel">
+        <a href="/" className={`${styles.button} ${styles.cancel}`}>
           Cancel
         </a>
-        <div className="button-break"></div>
-        <a href="/signup" className="button signup">
+        <div className={styles.buttonBreak}></div>
+        <a href="/signup" className={`${styles.button} ${styles.signup}`}>
           Don't have an account? Signup
         </a>
       </div>

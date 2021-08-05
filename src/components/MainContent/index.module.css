@@ -3,7 +3,6 @@
   --richBlack: #0c0d12;
   --platinum: #ebebeb;
   --mountbattenPink: #987f95;
-  --skobeloff: #096b72;
   /* Secondary color 30% */
 
   /* Pop/CTA colors 10% */
@@ -11,7 +10,12 @@
   /* Border */
 }
 
-#root {
+.contentContainer {
+  width: calc(100vw - 245px);
+  height: 100vh;
+  background-color: var(--platinum);
+  margin: 0 0;
   display: flex;
-  flex-flow: row wrap;
+  flex-flow: column nowrap;
+  align-self: flex-end;
 }

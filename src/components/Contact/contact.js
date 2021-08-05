@@ -1,23 +1,23 @@
 import React from "react";
-import "./contact.css";
+import styles from "./contact.module.css";
 
 export function Contact(props) {
   return (
-    <form className="contact-form">
-      <div className="header">
+    <form className={styles.contactForm}>
+      <div className={styles.header}>
         <p>Have ideas or suggestions for the site, found or having an issue?</p>
         <h1>Get in touch!</h1>
       </div>
-      <div className="firstname-container">
+      <div className={styles.firstnameContainer}>
         <label htmlFor="firstname">First Name</label>
         <input type="text" id="firstname" name="firstname" required />
       </div>
-      <div className="lastname-container">
+      <div className={styles.lastnameContainer}>
         <label htmlFor="lastname">Last Name</label>
         <input type="text" id="lastname" name="lastname" required />
       </div>
 
-      <div className="email-container">
+      <div className={styles.emailContainer}>
         <label htmlFor="email">Email</label>
         <input
           id="email"
@@ -27,7 +27,7 @@ export function Contact(props) {
           pattern=".+@.+\..+"
         />
       </div>
-      <div className="message-container">
+      <div className={styles.messageContainer}>
         <label htmlFor="message">Message</label>
         <textarea
           id="message"
@@ -40,16 +40,16 @@ export function Contact(props) {
         ></textarea>
       </div>
 
-      <div className="button-container">
+      <div className={styles.buttonContainer}>
         <button
           type="submit"
           value="Send"
           id="sign-up"
-          className="button signup"
+          className={`${styles.button} ${styles.signup}`}
         >
           Send
         </button>
-        <a href="/" className="button cancel">
+        <a href="/" className={`${styles.button} ${styles.cancel}`}>
           Cancel
         </a>
       </div>

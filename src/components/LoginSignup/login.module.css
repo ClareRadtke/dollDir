@@ -1,8 +1,20 @@
-.signup-form {
+:root {
+  /* Primary colors 60% */
+  --richBlack: #0c0d12;
+  --platinum: #ebebeb;
+  --mountbattenPink: #987f95;
+  /* Secondary color 30% */
+
+  /* Pop/CTA colors 10% */
+
+  /* Border */
+}
+
+.signupForm {
   display: flex;
   flex-flow: column nowrap;
   align-items: center;
-  background-color: rgb(124, 95, 160);
+  background-color: var(--platinum);
   margin: 2em;
   padding: 2em 2em;
 }
@@ -14,21 +26,24 @@
 label {
   margin-right: 0.5em;
   font-size: calc(1em + 0.5vw);
+  color: var(--richBlack);
 }
 
 input {
   line-height: 1.5;
   font-size: calc(1em + 0.5vw);
+  background-color: var(--platinum);
+  border: 2px solid var(--richBlack);
 }
 
-.email-container,
-.password-container {
+.emailContainer,
+.passwordContainer {
   display: flex;
   flex-flow: column nowrap;
   margin: 0.5em 0;
 }
 
-.button-container {
+.buttonContainer {
   margin: 1em 1em 2em;
   display: flex;
   flex-flow: row wrap;
@@ -58,22 +73,25 @@ input {
 }
 
 .button.login {
-  /* background: mistyrose;
-  color: black; */
-  /* margin-right: 3em; */
+  background: var(--mountbattenPink);
+  color: var(--platinum);
+  margin-right: 3em;
 }
 
 .button.signup {
-  /* background: mistyrose;
-  color: black; */
+  background: var(--platinum);
+  color: var(--richBlack);
+  border: 4px solid var(--mountbattenPink);
 }
 
 .button.cancel {
-  /* background: mistyrose;
-  color: black; */
+  background: var(--platinum);
+  color: var(--mountbattenPink);
+  border: 3px solid var(--mountbattenPink);
   margin-left: 1.5em;
+  font-weight: bold;
 }
-.button-break {
+.buttonBreak {
   flex-basis: 100%;
   height: 0;
 }
