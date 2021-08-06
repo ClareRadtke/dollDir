@@ -5,14 +5,7 @@ const resolvers = {
     // Get all Users
     users() {
       console.log("Getting users list");
-      // return User.find();
-      return [
-        {
-          _id: 3,
-          username: "re",
-          email: "m@m.com",
-        },
-      ];
+      return User.find();
     },
     // Get one user
     user(parent, { userId }) {
