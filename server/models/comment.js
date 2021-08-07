@@ -1,20 +1,29 @@
 const mongoose = require("mongoose");
+const Schema = mongoose.Schema;
 
 const commentSchema = new mongoose.Schema({
-  author: {
-    type: String,
-    required: "required",
-  },
+  author: [
+    {
+      type: Schema.Types.ObjectId,
+      ref: "User",
+    },
+  ],
   content: {
     type: String,
     required: "required",
   },
-  post: {
-    type: String,
-  },
-  photo: {
-    type: String,
-  },
+  post: [
+    {
+      type: Schema.Types.ObjectId,
+      ref: "Post",
+    },
+  ],
+  photo: [
+    {
+      type: Schema.Types.ObjectId,
+      ref: "Photo",
+    },
+  ],
 });
 
 //export model

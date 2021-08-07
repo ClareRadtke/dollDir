@@ -1,10 +1,13 @@
 const mongoose = require("mongoose");
+const Schema = mongoose.Schema;
 
 const postSchema = new mongoose.Schema({
-  author: {
-    type: String,
-    required: "required",
-  },
+  author: [
+    {
+      type: Schema.Types.ObjectId,
+      ref: "User",
+    },
+  ],
   title: {
     type: String,
     required: "required",
@@ -18,10 +21,10 @@ const postSchema = new mongoose.Schema({
     required: "selection of BJD, OOAK or Both is required",
   },
   likes: {
-    type: number,
+    type: Number,
   },
   comments: {
-    type: number,
+    type: Number,
   },
 });
 

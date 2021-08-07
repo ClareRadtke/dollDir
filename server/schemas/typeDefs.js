@@ -7,8 +7,6 @@ const typeDefs = gql`
     email: String!
     posts: [Post]
     photos: [Photo]
-    likes: [Like]
-    comments: [Comment]
   }
 
   type Post {
@@ -33,28 +31,25 @@ const typeDefs = gql`
   type Like {
     _id: ID!
     author: User!
-    post: Post
-    photo: Photo
   }
 
   type Comment {
     _id: ID!
     content: String
     author: User!
-    posts: Post
-    photos: Photo
   }
-  #selection string options will be "bjd", "ooak" or "both"
-  type ContentType {
-    selection: String!
-    posts: [Post]
-    photos: [Photo]
+
+  enum ContentType {
+    BJD
+    OOAK
+    BOTH
   }
 
   type Query {
     users: [User]
-    user(userId: ID!): User
+    user(userId: String!): User
     posts: [Post]
+    postsByContentType(contentType: ContentType): [Post]
     photos: [Photo]
   }
 `;

@@ -16,51 +16,64 @@ const resolvers = {
     posts() {
       return Post.find();
     },
+    // Get all Posts by ContentType
+    postsByContentType(parent, { contentType }) {
+      console.log("Getting posts by content type");
+      return Post.find({ contentType: contentType });
+    },
+
     // Get all Photos
     photos() {
       return Photo.find();
     },
   },
-  Get all Posts and Photos by a User
+  // Get all Posts and Photos by a User
   User: {
     posts(parent) {
-      return posts.filter((post) => post.author._id === parent._id);
+      console.log("User", parent);
+      return Post.find({ author: parent._id });
     },
     photos(parent) {
-      return photos.filter((photo) => photo.author._id === parent._id);
+      return Photo.find({ author: parent._id });
     },
   },
-  // Get all Comments & Likes on a Post
+  // Get all Comments, Likes & the author on a Post
   Post: {
+    author(parent) {
+      return User.findOne({ _id: parent.author });
+    },
     likes(parent) {
-      return likes.filter((like) => like.post._id === parent._id);
+      console.log("Post", parent);
+      return Like.find({ post: parent._id });
     },
     comments(parent) {
-      return comments.filter((comment) => comment.post._id === parent._id);
+      return Comment.find({ post: parent._id });
     },
   },
-  // Get all Comments & Likes on a Post
+  // Get all  Comments, Likes & the author on a Post
   Photo: {
+    author(parent) {
+      return User.findOne({ _id: parent.author });
+    },
     likes(parent) {
-      return likes.filter((like) => like.photo._id === parent._id);
+      console.log("Photo", parent);
+      return Like.find({ photo: parent._id });
     },
     comments(parent) {
-      return comments.filter((comment) => comment.photo._id === parent._id);
+      return Comment.find({ photo: parent._id });
     },
   },
-  //Get all Photos and Posts by ContentType
-  // ContentType: {
-  //   posts(parent) {
-  //     return posts.filter(
-  //       (post) => post.contentType.selection === parent.selection
-  //     );
-  //   },
-  //   photos(parent) {
-  //     return photos.filter(
-  //       (photo) => photo.contentType.selection === parent.selection
-  //     );
-  //   },
-  // },
+  // Get Author,
+  Like: {
+    author(parent) {
+      return User.findOne({ _id: parent.author });
+    },
+  },
+  Comment: {
+    author(parent) {
+      return User.findOne({ _id: parent.author });
+    },
+  },
 };
 
 module.exports = resolvers;
@@ -68,5 +81,3 @@ module.exports = resolvers;
 //Get all Photos and Posts by ContentType
 
 // Get all Photos by ContentType
-
-// Get all Posts by ContentType
