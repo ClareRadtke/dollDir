@@ -11,9 +11,10 @@ const typeDefs = gql`
 
   type Post {
     _id: ID!
+    mediaType: MediaType!
     author: User!
-    title: String!
-    content: String!
+    title: String
+    content: String
     contentType: ContentType!
     likes: [Like]
     comments: [Comment]
@@ -21,6 +22,7 @@ const typeDefs = gql`
 
   type Photo {
     _id: ID!
+    mediaType: MediaType!
     author: User!
     desc: String
     contentType: ContentType!
@@ -45,11 +47,18 @@ const typeDefs = gql`
     BOTH
   }
 
+  enum MediaType {
+    Photo
+    Post
+  }
+
+  union Media = Post | Photo
+
   type Query {
     users: [User]
     user(userId: String!): User
     posts: [Post]
-    postsByContentType(contentType: ContentType): [Post]
+    media(contentType: ContentType, mediaType: MediaType): [Media]
     photos: [Photo]
   }
 `;

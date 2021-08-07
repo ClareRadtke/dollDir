@@ -1,5 +1,6 @@
 const mongoose = require("mongoose");
 const Schema = mongoose.Schema;
+const { Media } = require("./media");
 
 const photoSchema = new mongoose.Schema({
   author: [
@@ -24,5 +25,6 @@ const photoSchema = new mongoose.Schema({
 });
 
 //export model
-const Photo = mongoose.model("Photo", photoSchema);
+const Photo = Media.discriminator("Photo", photoSchema);
+// const Photo = mongoose.model("Photo", photoSchema, "media");
 module.exports.Photo = Photo;

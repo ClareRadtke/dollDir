@@ -35,6 +35,7 @@ const usersSeed = [
 const postsSeed = [
   {
     _id: ObjectId("610e228e80bbe784d83318f4"),
+    mediaType: "Post",
     author: ObjectId("610e10ca314a40809eda5b2b"),
     title: "Article 1",
     content:
@@ -45,6 +46,7 @@ const postsSeed = [
   },
   {
     _id: ObjectId("610e228e80bbe784d83318f5"),
+    mediaType: "Post",
     author: ObjectId("610e10ca314a40809eda5b2b"),
     title: "Article 2",
     content:
@@ -55,6 +57,7 @@ const postsSeed = [
   },
   {
     _id: ObjectId("610e228e80bbe784d83318f6"),
+    mediaType: "Post",
     author: ObjectId("610e222880b5b0848d0a511e"),
     title: "Furst Post",
     content:
@@ -65,6 +68,7 @@ const postsSeed = [
   },
   {
     _id: ObjectId("610e228e80bbe784d83318f7"),
+    mediaType: "Post",
     author: ObjectId("610e10ca314a40809eda5b2a"),
     title: "Post?",
     content:
@@ -78,6 +82,7 @@ const postsSeed = [
 const photosSeed = [
   {
     _id: ObjectId("610e228e80bbe784d83318f9"),
+    mediaType: "Photo",
     author: ObjectId("610e10ca314a40809eda5b2a"),
     desc: "Desc about photo....",
     contentType: "BOTH",
@@ -86,6 +91,7 @@ const photosSeed = [
   },
   {
     _id: ObjectId("610e228e80bbe784d83318fa"),
+    mediaType: "Photo",
     author: ObjectId("610e222880b5b0848d0a511e"),
     desc: "Desc about photo....",
     contentType: "BJD",
@@ -94,6 +100,7 @@ const photosSeed = [
   },
   {
     _id: ObjectId("610e228e80bbe784d83318fb"),
+    mediaType: "Photo",
     author: ObjectId("610e222880b5b0848d0a511e"),
     desc: "Desc about photo....",
     contentType: "OOAK",
@@ -102,6 +109,7 @@ const photosSeed = [
   },
   {
     _id: ObjectId("610e228e80bbe784d83318fc"),
+    mediaType: "Photo",
     author: ObjectId("610e10ca314a40809eda5b2b"),
     desc: "Desc about photo....",
     contentType: "BJD",
@@ -173,8 +181,8 @@ async function runSeeds() {
   try {
     await Promise.all([
       db.User.deleteMany({}),
-      db.Post.deleteMany({}),
-      db.Photo.deleteMany({}),
+      db.Media.deleteMany({}),
+      // db.Photo.deleteMany({}),
       db.Like.deleteMany({}),
       db.Comment.deleteMany({}),
     ]);

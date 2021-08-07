@@ -1,5 +1,6 @@
 const mongoose = require("mongoose");
 const Schema = mongoose.Schema;
+const { Media } = require("./media");
 
 const postSchema = new mongoose.Schema({
   author: [
@@ -29,5 +30,6 @@ const postSchema = new mongoose.Schema({
 });
 
 //export model
-const Post = mongoose.model("Post", postSchema);
+const Post = Media.discriminator("Post", postSchema);
+// const Post = mongoose.model("Post", postSchema, "media");
 module.exports.Post = Post;

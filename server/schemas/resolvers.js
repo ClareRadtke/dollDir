@@ -1,4 +1,5 @@
-const { User, Post, Photo, Like, Comment } = require("../models");
+const { User, Post, Photo, Like, Comment, Media } = require("../models");
+const mongoose = require("mongoose");
 
 const resolvers = {
   Query: {
@@ -14,23 +15,32 @@ const resolvers = {
     },
     // Get all Posts
     posts() {
-      return Post.find();
-    },
-    // Get all Posts by ContentType
-    postsByContentType(parent, { contentType }) {
-      console.log("Getting posts by content type");
-      return Post.find({ contentType: contentType });
+      return Post.find({ mediaType: "Post" });
     },
 
     // Get all Photos
     photos() {
-      return Photo.find();
+      return Photo.find({ mediaType: "Photo" });
+    },
+
+    media(parent, { contentType, mediaType }) {
+      const filter = {};
+
+      if (contentType != null) filter.contentType = contentType;
+      if (mediaType != null) filter.mediaType = mediaType;
+
+      return Media.find(filter);
+    },
+  },
+
+  Media: {
+    __resolveType(obj, context, info) {
+      return obj.mediaType == "Photo" ? "Photo" : "Post";
     },
   },
   // Get all Posts and Photos by a User
   User: {
     posts(parent) {
-      console.log("User", parent);
       return Post.find({ author: parent._id });
     },
     photos(parent) {
@@ -43,7 +53,6 @@ const resolvers = {
       return User.findOne({ _id: parent.author });
     },
     likes(parent) {
-      console.log("Post", parent);
       return Like.find({ post: parent._id });
     },
     comments(parent) {
@@ -56,7 +65,6 @@ const resolvers = {
       return User.findOne({ _id: parent.author });
     },
     likes(parent) {
-      console.log("Photo", parent);
       return Like.find({ photo: parent._id });
     },
     comments(parent) {
@@ -77,7 +85,3 @@ const resolvers = {
 };
 
 module.exports = resolvers;
-
-//Get all Photos and Posts by ContentType
-
-// Get all Photos by ContentType
