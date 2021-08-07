@@ -4,49 +4,12 @@ import { BrowserRouter as Router } from "react-router-dom";
 import "./index.module.css";
 import App from "./App";
 import * as serviceWorker from "./serviceWorker";
-import {
-  ApolloClient,
-  InMemoryCache,
-  ApolloProvider,
-  useQuery,
-  gql,
-} from "@apollo/client";
+import { ApolloClient, InMemoryCache, ApolloProvider } from "@apollo/client";
+
 const client = new ApolloClient({
   uri: "http://localhost:3333/graphql",
   cache: new InMemoryCache(),
 });
-// Create a query
-// const MEDIA = gql`
-//   query GetMedia {
-//     media {
-//       ... on Post {
-//         _id
-//         mediaType
-//         contentType
-//       }
-//       ... on Photo {
-//         _id
-//         mediaType
-//         contentType
-//       }
-//     }
-//   }
-// `;
-// Use the query to get data from DB
-// export function MediaQuery() {
-//   const { loading, error, data } = useQuery(MEDIA);
-
-//   if (loading) return <p>Loading ...</p>;
-//   if (error) return <p>Error :( </p>;
-
-//   return data.media.map(({ _id, mediaType, contentType }) => (
-//     <div>
-//       <p>id: {_id}</p>
-//       <p>mediaType: {mediaType}</p>
-//       <p>contentType: {contentType}</p>
-//     </div>
-//   ));
-// }
 
 ReactDOM.render(
   <ApolloProvider client={client}>

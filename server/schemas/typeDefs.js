@@ -16,6 +16,8 @@ const typeDefs = gql`
     title: String
     content: String
     contentType: ContentType!
+    likesCount: Int
+    commentsCount: Int
     likes: [Like]
     comments: [Comment]
   }
@@ -26,6 +28,8 @@ const typeDefs = gql`
     author: User!
     desc: String
     contentType: ContentType!
+    likesCount: Int
+    commentsCount: Int
     likes: [Like]
     comments: [Comment]
   }

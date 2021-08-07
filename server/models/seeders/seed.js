@@ -41,8 +41,8 @@ const postsSeed = [
     content:
       "Duis quis tellus varius elit porttitor vulputate nec non mi. Integer ut condimentum arcu. Suspendisse in purus ut sem finibus commodo ac id eros. Aenean finibus mauris in odio condimentum, et mattis tortor pretium. Cras eleifend auctor libero. Donec pellentesque quam et libero rhoncus, quis imperdiet velit hendrerit. Nulla ac elit sapien. Aenean et augue efficitur, commodo quam in, maximus risus.",
     contentType: "BJD",
-    likes: 1,
-    comments: 1,
+    likesCount: 1,
+    commentsCount: 1,
   },
   {
     _id: ObjectId("610e228e80bbe784d83318f5"),
@@ -52,8 +52,8 @@ const postsSeed = [
     content:
       "Duis quis tellus varius elit porttitor vulputate nec non mi. Integer ut condimentum arcu. Suspendisse in purus ut sem finibus commodo ac id eros. Aenean finibus mauris in odio condimentum, et mattis tortor pretium. Cras eleifend auctor libero. Donec pellentesque quam et libero rhoncus, quis imperdiet velit hendrerit. Nulla ac elit sapien. Aenean et augue efficitur, commodo quam in, maximus risus.",
     contentType: "OOAK",
-    likes: 0,
-    comments: 1,
+    likesCount: 0,
+    commentsCount: 1,
   },
   {
     _id: ObjectId("610e228e80bbe784d83318f6"),
@@ -63,8 +63,8 @@ const postsSeed = [
     content:
       "Duis quis tellus varius elit porttitor vulputate nec non mi. Integer ut condimentum arcu. Suspendisse in purus ut sem finibus commodo ac id eros. Aenean finibus mauris in odio condimentum, et mattis tortor pretium. Cras eleifend auctor libero. Donec pellentesque quam et libero rhoncus, quis imperdiet velit hendrerit. Nulla ac elit sapien. Aenean et augue efficitur, commodo quam in, maximus risus.",
     contentType: "OOAK",
-    likes: 1,
-    comments: 0,
+    likesCount: 1,
+    commentsCount: 0,
   },
   {
     _id: ObjectId("610e228e80bbe784d83318f7"),
@@ -74,8 +74,8 @@ const postsSeed = [
     content:
       "Duis quis tellus varius elit porttitor vulputate nec non mi. Integer ut condimentum arcu. Suspendisse in purus ut sem finibus commodo ac id eros. Aenean finibus mauris in odio condimentum, et mattis tortor pretium. Cras eleifend auctor libero. Donec pellentesque quam et libero rhoncus, quis imperdiet velit hendrerit. Nulla ac elit sapien. Aenean et augue efficitur, commodo quam in, maximus risus.",
     contentType: "BOTH",
-    likes: 0,
-    comments: 0,
+    likesCount: 0,
+    commentsCount: 0,
   },
 ];
 
@@ -86,8 +86,8 @@ const photosSeed = [
     author: ObjectId("610e10ca314a40809eda5b2a"),
     desc: "Desc about photo....",
     contentType: "BOTH",
-    likes: 0,
-    comments: 0,
+    likesCount: 0,
+    commentsCount: 0,
   },
   {
     _id: ObjectId("610e228e80bbe784d83318fa"),
@@ -95,8 +95,8 @@ const photosSeed = [
     author: ObjectId("610e222880b5b0848d0a511e"),
     desc: "Desc about photo....",
     contentType: "BJD",
-    likes: 0,
-    comments: 0,
+    likesCount: 0,
+    commentsCount: 0,
   },
   {
     _id: ObjectId("610e228e80bbe784d83318fb"),
@@ -104,8 +104,8 @@ const photosSeed = [
     author: ObjectId("610e222880b5b0848d0a511e"),
     desc: "Desc about photo....",
     contentType: "OOAK",
-    likes: 1,
-    comments: 0,
+    likesCount: 1,
+    commentsCount: 0,
   },
   {
     _id: ObjectId("610e228e80bbe784d83318fc"),
@@ -113,8 +113,8 @@ const photosSeed = [
     author: ObjectId("610e10ca314a40809eda5b2b"),
     desc: "Desc about photo....",
     contentType: "BJD",
-    likes: 2,
-    comments: 0,
+    likesCount: 2,
+    commentsCount: 0,
   },
 ];
 

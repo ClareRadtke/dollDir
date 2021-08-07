@@ -16,10 +16,10 @@ const photoSchema = new mongoose.Schema({
     type: String,
     required: "selection of BJD, OOAK or Both is required",
   },
-  likes: {
+  likesCount: {
     type: Number,
   },
-  comments: {
+  commentsCount: {
     type: Number,
   },
 });

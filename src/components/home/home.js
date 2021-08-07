@@ -1,15 +1,89 @@
 import React from "react";
+
 import styles from "./home.module.css";
 import heartRed from "./icons/heartRed32x32.png";
 import comment from "./icons/comment32x32.png";
 
+import { useQuery, gql } from "@apollo/client";
+
+const MEDIA = gql`
+  query GetMedia {
+    media {
+      ... on Post {
+        _id
+        mediaType
+        contentType
+        author {
+          username
+          _id
+        }
+        title
+        content
+        commentsCount
+        likesCount
+      }
+      ... on Photo {
+        _id
+        mediaType
+        contentType
+        desc
+        author {
+          _id
+          username
+        }
+        commentsCount
+        likesCount
+      }
+    }
+  }
+`;
+
+function MediaQuery() {
+  const { loading, error, data } = useQuery(MEDIA);
+
+  if (loading) return <div>"Loading MediaQuery ..."</div>;
+  if (error) return <div>"Error:", {error.message}</div>;
+  console.log("MediaQuery load success!", data);
+  return (
+    <>
+      {data.media.map((m) => {
+        if (m.mediaType === "Photo") {
+          return (
+            <Photo
+              img="http://placekitten.com/360/300"
+              likesCount={m.likesCount}
+              commentsCount={m.commentsCount}
+              author={m.author.username}
+              desc={m.desc}
+            ></Photo>
+          );
+        }
+        if (m.mediaType === "Post") {
+          return (
+            <WrittenPost
+              title={m.title}
+              content={m.content}
+              username={m.author.username}
+              date="5/8/2021"
+              commentsCount={m.commentsCount}
+              likesCount={m.likesCount}
+            ></WrittenPost>
+          );
+        }
+        return null;
+      })}
+    </>
+  );
+}
+
+// Home components
 export function Photo(props) {
   return (
     <div className={styles.photoContainer}>
       <img src={props.img} alt=""></img>
       <PostInfo
-        numLikes={props.likes}
-        numComments={props.comments}
+        numLikes={props.likesCount}
+        numComments={props.commentsCount}
         username={props.author}
       >
         {props.desc}
@@ -30,8 +104,8 @@ export function WrittenPost(props) {
           <p> {props.content}</p>
         </div>
         <PostInfo
-          numLikes={props.likes}
-          numComments={props.comments}
+          numLikes={props.likesCount}
+          numComments={props.commentsCount}
           username={props.username}
           date={props.date}
           // TODO: schema needs a date key with creation date
@@ -64,55 +138,7 @@ export function PostInfo(props) {
 export function Home(props) {
   return (
     <div className={styles.homeContent}>
-      <Photo
-        img="http://placekitten.com/360/300"
-        likes="2"
-        comments="0"
-        author="User1"
-        desc="My Kitten!"
-      ></Photo>
-
-      <WrittenPost
-        title="Written Post"
-        content="A website for the Doll Customising community. You will be able to select
-        if your interest is in Ball Jointed Dolls (Artist sculpted resin or
-        vinyl dolls), One Of A Kind Custom Playline Dolls (for example: barbie,
-        monster high, rainbow high dolls - dolls that can be brought in
-        toystores) or both and the site will tailor its content for your
-        preference. The home page will have a feed of the most recent photos and
-        blogs."
-        username="User2"
-        date="5/8/2021"
-        comments="1"
-        likes="3"
-      ></WrittenPost>
-
-      {/* 
-
-      */}
-
-      <Photo
-        img="http://placekitten.com/350/250"
-        likes="12"
-        comments="8"
-        author="User3"
-        desc="Getting some zzz's ...."
-      ></Photo>
-
-      <WrittenPost
-        title="Written Post"
-        content="A website for the Doll Customising community. You will be able to select
-        if your interest is in Ball Jointed Dolls (Artist sculpted resin or
-        vinyl dolls), One Of A Kind Custom Playline Dolls (for example: barbie,
-        monster high, rainbow high dolls - dolls that can be brought in
-        toystores) or both and the site will tailor its content for your
-        preference. The home page will have a feed of the most recent photos and
-        blogs."
-        username="User1"
-        date="7/8/2021"
-        comments="5"
-        likes="6"
-      ></WrittenPost>
+      <MediaQuery />
     </div>
   );
 }
