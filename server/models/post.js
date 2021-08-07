@@ -2,6 +2,7 @@ const mongoose = require("mongoose");
 const Schema = mongoose.Schema;
 const { Media } = require("./media");
 
+// TODO: needs a date key with creation date
 const postSchema = new mongoose.Schema({
   author: [
     {
