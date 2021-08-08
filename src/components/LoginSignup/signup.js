@@ -1,7 +1,36 @@
-import React from "react";
+import React, { useState } from "react";
 import styles from "./signup.module.css";
+import { gql, useMutation } from "@apollo/client";
+import { useHistory } from "react-router-dom";
+
+const ADD_USER = gql`
+  mutation Mutation(
+    $addUserEmail: String!
+    $addUserUsername: String!
+    $addUserPassword: String!
+  ) {
+    addUser(
+      email: $addUserEmail
+      username: $addUserUsername
+      password: $addUserPassword
+    ) {
+      token
+      user {
+        username
+        _id
+        email
+      }
+    }
+  }
+`;
 
 export function Signup(props) {
+  const [addUser, { data, loading, error }] = useMutation(ADD_USER);
+  const [email, updateEmail] = useState("");
+  const [username, updateUsername] = useState("");
+  const [password, updatePassword] = useState("");
+  const history = useHistory();
+
   return (
     <form className={styles.signupForm}>
       <div className={styles.header}>
@@ -9,11 +38,24 @@ export function Signup(props) {
       </div>
       <div className={styles.usernameContainer}>
         <label htmlFor="username">Username:</label>
-        <input type="text" id="username" name="username" required />
+        <input
+          onChange={(event) => {
+            updateUsername(event.currentTarget.value);
+          }}
+          value={username}
+          type="text"
+          id="username"
+          name="username"
+          required
+        />
       </div>
       <div className={styles.emailContainer}>
         <label htmlFor="email">Email:</label>
         <input
+          onChange={(event) => {
+            updateEmail(event.currentTarget.value);
+          }}
+          value={email}
           id="email"
           name="email"
           required
@@ -24,6 +66,10 @@ export function Signup(props) {
       <div className={styles.passwordContainer}>
         <label htmlFor="password">Password (8 characters minimum):</label>
         <input
+          onChange={(event) => {
+            updatePassword(event.currentTarget.value);
+          }}
+          value={password}
           type="password"
           id="password"
           name="password"
@@ -33,10 +79,22 @@ export function Signup(props) {
       </div>
       <div className={styles.buttonContainer}>
         <button
-          type="submit"
+          type="button"
           value="sign-up"
           id="sign-up"
           className={`${styles.button} ${styles.signup}`}
+          onClick={(event) => {
+            addUser({
+              variables: {
+                addUserEmail: email,
+                addUserUsername: username,
+                addUserPassword: password,
+              },
+            }).then((p) => {
+              window.localStorage.setItem("token", "addUser.token");
+              history.push("/home");
+            });
+          }}
         >
           Signup
         </button>

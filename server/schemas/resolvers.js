@@ -1,5 +1,7 @@
 const { User, Post, Photo, Like, Comment, Media } = require("../models");
 const mongoose = require("mongoose");
+const { AuthenticationError } = require("apollo-server-express");
+const { signToken } = require("../utils/auth");
 
 const resolvers = {
   Query: {
@@ -12,6 +14,12 @@ const resolvers = {
     user(parent, { userId }) {
       console.log("Getting user");
       return User.findOne({ _id: userId });
+    },
+    me(parent, args, context) {
+      if (context.user) {
+        return Profile.findOne({ _id: context.user._id });
+      }
+      throw new AuthenticationError("You need to be logged in!");
     },
     // Get all Posts
     posts() {
@@ -30,6 +38,16 @@ const resolvers = {
       if (mediaType != null) filter.mediaType = mediaType;
 
       return Media.find(filter);
+    },
+  },
+
+  Mutation: {
+    async addUser(parent, { email, username, password }) {
+      console.log(email, username);
+      const user = await User.create({ username, email, password });
+      const token = signToken(user);
+
+      return { token, user };
     },
   },
 
