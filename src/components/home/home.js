@@ -80,7 +80,9 @@ function MediaQuery() {
 export function Photo(props) {
   return (
     <div className={styles.photoContainer}>
-      <img src={props.img} alt=""></img>
+      <div className={styles.imgDiv}>
+        <img src={props.img} alt=""></img>
+      </div>
       <PostInfo
         numLikes={props.likesCount}
         numComments={props.commentsCount}
@@ -97,11 +99,11 @@ export function WrittenPost(props) {
     <div className={styles.writtenPostContainer}>
       <div className={styles.articleContainer}>
         <div className={styles.articleHeader}>
-          <h3>{props.title}</h3>
+          <h3 className={styles.title}>{props.title}</h3>
         </div>
 
         <div className={styles.articleContent}>
-          <p> {props.content}</p>
+          <p className={styles.content}> {props.content}</p>
         </div>
         <PostInfo
           numLikes={props.likesCount}

@@ -14,50 +14,88 @@
 .homeContent {
   display: flex;
   flex-flow: row wrap;
-  width: calc(100vw - 245px);
+  width: 100%;
 }
 
 .photoContainer {
   background-color: #827db5;
   display: flex;
-  flex-flow: column wrap;
+  flex-flow: column nowrap;
   justify-content: center;
   align-items: center;
-  width: calc(30vw - 190px);
-  height: fit-content;
-  margin: 1em;
-  padding: 1em 0;
+  height: calc(352px - 2em);
+  margin: 0.5em;
+  padding: 0.5em;
+  flex-grow: 1;
+  flex-basis: 100%;
 }
 
-.photoContainer img {
-  height: 300px;
-  width: 370px;
+.imgDiv {
+  display: flex;
+  width: 100%;
+  overflow: hidden;
+  align-items: center;
+  justify-content: center;
+  flex-basis: 100%;
+}
+
+.imgDiv img {
+  max-width: 100%;
 }
 
 .writtenPostContainer {
   background-color: #3eb2b6;
   display: flex;
-  flex-flow: column wrap;
+  flex-flow: column nowrap;
   justify-content: center;
   align-items: center;
   width: calc(30vw - 190px);
-  margin: 1em;
+  height: calc(352px - 2em);
+  margin: 0.5em;
+  padding: 0.5em;
+  flex-grow: 1;
+  flex-basis: 100%;
 }
 
 .articleContainer {
   display: flex;
-  flex-flow: column wrap;
+  flex-flow: column nowrap;
   justify-content: center;
   align-items: center;
   max-width: 30vw;
-  margin: 1em;
+  max-height: 100%;
+  margin: 0.5em 1em;
+}
+
+.articleContainer .title {
+  margin: 0 0 0.5em;
+  font-size: calc(12px + 0.4vw);
+  padding: 0;
+}
+
+.articleContainer .articleContent {
+  margin: 0;
+  height: 80%;
+}
+
+.articleContent .content {
+  margin: 0 0 0.5em;
+  font-size: calc(12px + 0.2vw);
+}
+
+.articleContainer .postInfo {
+  flex-flow: row-reverse nowrap;
+}
+
+.articleContainer .posterInfo {
+  padding: 0;
 }
 
 .postInfo {
   display: flex;
   flex-flow: column nowrap;
   justify-content: center;
-  width: 360px;
+  width: 100%;
 }
 
 .posterInfo {
@@ -66,10 +104,15 @@
   justify-content: flex-start;
   align-items: center;
   align-self: flex-start;
-  height: 1em;
-  width: calc(360px - 135px);
+  width: 100%;
+  min-height: 1em;
+  max-height: 1.5em;
   margin: 0;
-  padding: 0;
+  padding: 0.25em 0 0;
+}
+
+.posterInfo h5 {
+  font-size: calc(12px + 0.2vw);
 }
 
 .posterUsername {
@@ -77,11 +120,12 @@
   align-self: center;
 }
 
-.posterComment {
-}
-
 .datePosted {
   margin: 0.5em;
+}
+
+.articleContainer .likesCommentsContainer {
+  align-self: center;
 }
 
 .likesCommentsContainer {
@@ -90,14 +134,75 @@
   justify-content: center;
   align-self: flex-end;
   margin: 0;
+  width: 30%;
+  height: 20px;
+  flex-basis: 100%;
 }
 
 .likesCommentsContainer img {
-  width: 30px;
-  height: 30px;
+  max-width: 30px;
+  min-width: 20px;
+  max-height: 30px;
+  min-height: 20px;
+  flex-grow: 1;
   margin: 0.25em 0.5em 0;
 }
 .likesCommentsContainer p {
   margin: 0.25em 0 0;
   padding-right: 0.5em;
+  line-height: 1;
+  font-size: calc(16px + 0.2vw);
 }
+
+/* increase images per line as browser gets larger using media queries
+   this first query makes two images per line at 900px width */
+@media only screen and (min-width: 900px) {
+  .photoContainer {
+    width: calc(30vw - 190px);
+    height: calc(348px - 2em);
+    flex-basis: 40%;
+  }
+
+  .writtenPostContainer {
+    width: calc(30vw - 190px);
+    height: calc(348px - 2em);
+    flex-basis: 40%;
+  }
+}
+
+/* three images per line when browser width exceeds 1400px */
+@media only screen and (min-width: 1250px) {
+  .photoContainer {
+    width: calc(30vw - 190px);
+    height: calc(332px - 2em);
+    flex-basis: 30%;
+  }
+
+  .writtenPostContainer {
+    width: calc(30vw - 190px);
+    height: calc(332px - 2em);
+    flex-basis: 30%;
+  }
+}
+
+/* four images per line when browser width exceeds 1600px */
+@media only screen and (min-width: 1550px) {
+  .photoContainer {
+    width: calc(30vw - 190px);
+    height: calc(337px - 2em);
+    flex-basis: 20%;
+  }
+
+  .writtenPostContainer {
+    width: calc(30vw - 190px);
+    height: calc(337px - 2em);
+    flex-basis: 20%;
+  }
+}
+
+/* five images per line when browser width exceeds 1600px
+@media only screen and (min-width: 1600px) {
+  .imgDiv {
+    flex-basis: 20%;
+  }
+} */

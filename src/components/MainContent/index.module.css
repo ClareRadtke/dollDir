@@ -11,7 +11,7 @@
 }
 
 .contentContainer {
-  width: calc(100vw - 245px);
+  width: calc(100% - 244px);
   height: 100vh;
   background-color: var(--platinum);
   margin: 0 0;
