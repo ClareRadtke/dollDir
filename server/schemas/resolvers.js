@@ -49,6 +49,22 @@ const resolvers = {
 
       return { token, user };
     },
+    async login(parent, { email, password }) {
+      const user = await User.findOne({ email });
+
+      if (!user) {
+        throw new AuthenticationError("No profile with this email found!");
+      }
+
+      const correctPassword = await user.validPassword(password);
+
+      if (!correctPassword) {
+        throw new AuthenticationError("Incorrect password!");
+      }
+
+      const token = signToken(user);
+      return { token, user };
+    },
   },
 
   Media: {

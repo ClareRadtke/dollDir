@@ -2,6 +2,7 @@ import React, { useState } from "react";
 import styles from "./signup.module.css";
 import { gql, useMutation } from "@apollo/client";
 import { useHistory } from "react-router-dom";
+import { setToken } from "../../utils/auth";
 
 const ADD_USER = gql`
   mutation Mutation(
@@ -91,7 +92,7 @@ export function Signup(props) {
                 addUserPassword: password,
               },
             }).then((p) => {
-              window.localStorage.setItem("token", "addUser.token");
+              setToken(p.data.addUser.token);
               history.push("/home");
             });
           }}

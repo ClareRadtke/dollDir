@@ -1,7 +1,28 @@
-import React from "react";
+import React, { useState } from "react";
 import styles from "./login.module.css";
+import { gql, useMutation } from "@apollo/client";
+import { useHistory } from "react-router-dom";
+import { setToken } from "../../utils/auth";
+
+const LOGIN = gql`
+  mutation Mutation($loginEmail: String!, $loginPassword: String!) {
+    login(email: $loginEmail, password: $loginPassword) {
+      token
+      user {
+        username
+        email
+        _id
+      }
+    }
+  }
+`;
 
 export function Login(props) {
+  const [login, { data, loading, error }] = useMutation(LOGIN);
+  const [email, updateEmail] = useState("");
+  const [password, updatePassword] = useState("");
+  const history = useHistory();
+
   return (
     <form className={styles.signupForm}>
       <div className={styles.header}>
@@ -10,6 +31,10 @@ export function Login(props) {
       <div className={styles.emailContainer}>
         <label htmlFor="email">Email:</label>
         <input
+          onChange={(event) => {
+            updateEmail(event.currentTarget.value);
+          }}
+          value={email}
           id="email"
           name="email"
           required
@@ -20,6 +45,10 @@ export function Login(props) {
       <div className={styles.passwordContainer}>
         <label htmlFor="password">Password:</label>
         <input
+          onChange={(event) => {
+            updatePassword(event.currentTarget.value);
+          }}
+          value={password}
           type="password"
           id="password"
           name="password"
@@ -29,10 +58,21 @@ export function Login(props) {
       </div>
       <div className={styles.buttonContainer}>
         <button
-          type="submit"
+          type="button"
           value="login"
           id="login"
           className={`${styles.button} ${styles.login}`}
+          onClick={(event) => {
+            login({
+              variables: {
+                loginEmail: email,
+                loginPassword: password,
+              },
+            }).then((p) => {
+              setToken(p.data.login.token);
+              history.push("/home");
+            });
+          }}
         >
           Login
         </button>
