@@ -29,6 +29,7 @@ export function NewPost(props) {
   const [title, updateTitle] = useState("");
   const [content, updateContent] = useState("");
   const [contentType, updateContentType] = useState("");
+  const history = useHistory();
   return (
     <>
       <div className={styles.buttonContainer}>
@@ -45,7 +46,7 @@ export function NewPost(props) {
                 addPostContentType: contentType,
               },
             }).then(() => {
-              useHistory.push("/dashboard");
+              history.push("/dashboard");
             });
           }}
         >
@@ -54,9 +55,13 @@ export function NewPost(props) {
       </div>
 
       <div className={styles.homeContent}>
-        <form className={`${styles.articleContainer} ${styles.newPostForm}`}>
-          <label for="post-title"></label>
+        <form
+          autoComplete="off"
+          className={`${styles.articleContainer} ${styles.newPostForm}`}
+        >
+          <label htmlFor="post-title"></label>
           <input
+            className={styles.newpostInput}
             type="text"
             id="post-title"
             name="post-title"
@@ -69,8 +74,9 @@ export function NewPost(props) {
             }}
           />
 
-          <label for="new-post"></label>
+          <label htmlFor="new-post"></label>
           <textarea
+            className={styles.newpostTextarea}
             value={content}
             onChange={(event) => {
               updateContent(event.currentTarget.value);
@@ -83,13 +89,13 @@ export function NewPost(props) {
             spellCheck="true"
             minLength="1"
             placeholder="Write your post here"
-            onInput='this.style.height = "";this.style.height = this.scrollHeight + "px"'
           ></textarea>
 
-          <label for="contentTypeSelection" className={styles.contentType}>
+          <label htmlFor="contentTypeSelection" className={styles.contentType}>
             What part of the hobby does this relate to?
           </label>
           <input
+            className={styles.newpostInput}
             list="contentTypeOptions"
             id="contentTypeSelection"
             name="contentTypeSelection"

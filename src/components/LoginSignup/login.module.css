@@ -27,17 +27,18 @@
   font-size: calc(2em + 0.5vw);
 }
 
-label {
+.loginLabel {
   margin-right: 0.5em;
   font-size: calc(1em + 0.5vw);
   color: var(--richBlack);
 }
 
-input {
+.loginInput {
   line-height: 1.5;
   font-size: calc(1em + 0.5vw);
   background-color: var(--platinum);
   border: 2px solid var(--richBlack);
+  width: calc(400px + 0.5vw);
 }
 
 .emailContainer,

@@ -11,6 +11,7 @@ import { About } from "../About/about";
 import { Home } from "../Home/home";
 import { Dashboard } from "../Dashboard/dashboard";
 import { NewPost } from "../NewPost/newPost";
+import { NewPhoto } from "../NewPhoto/newPhoto";
 
 export function MainContent(props) {
   return (
@@ -41,6 +42,10 @@ export function MainContent(props) {
 
       <Route path="/new-post">
         <NewPost />
+      </Route>
+
+      <Route path="/new-photo">
+        <NewPhoto />
       </Route>
 
       <Route exact path="/">

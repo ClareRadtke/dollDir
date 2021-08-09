@@ -3,23 +3,42 @@ import styles from "./contact.module.css";
 
 export function Contact(props) {
   return (
-    <form className={styles.contactForm}>
+    <form autoComplete="off" className={styles.contactForm}>
       <div className={styles.header}>
         <p>Have ideas or suggestions for the site, found or having an issue?</p>
         <h1>Get in touch!</h1>
       </div>
       <div className={styles.firstnameContainer}>
-        <label htmlFor="firstname">First Name</label>
-        <input type="text" id="firstname" name="firstname" required />
+        <label htmlFor="firstname" className={styles.contactLabel}>
+          First Name
+        </label>
+        <input
+          className={styles.contactInput}
+          type="text"
+          id="firstname"
+          name="firstname"
+          required
+        />
       </div>
       <div className={styles.lastnameContainer}>
-        <label htmlFor="lastname">Last Name</label>
-        <input type="text" id="lastname" name="lastname" required />
+        <label htmlFor="lastname" className={styles.contactLabel}>
+          Last Name
+        </label>
+        <input
+          className={styles.contactInput}
+          type="text"
+          id="lastname"
+          name="lastname"
+          required
+        />
       </div>
 
       <div className={styles.emailContainer}>
-        <label htmlFor="email">Email</label>
+        <label htmlFor="email" className={styles.contactLabel}>
+          Email
+        </label>
         <input
+          className={styles.contactInput}
           id="email"
           name="email"
           required
@@ -28,8 +47,11 @@ export function Contact(props) {
         />
       </div>
       <div className={styles.messageContainer}>
-        <label htmlFor="message">Message</label>
+        <label htmlFor="message" className={styles.contactLabel}>
+          Message
+        </label>
         <textarea
+          className={styles.contactTextarea}
           id="message"
           name="message"
           required

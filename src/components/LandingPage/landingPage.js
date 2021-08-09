@@ -5,7 +5,7 @@ export function Content(props) {
   return (
     <div className={styles.capabilityContainer}>
       <p className={styles.hobbyType}>{props.hobbyType}</p>
-      <p>{props.children}</p>
+      <p className={styles.content}>{props.children}</p>
       <a href={props.to} className={`${styles.button} ${styles.signup}`}>
         {props.cta}
       </a>

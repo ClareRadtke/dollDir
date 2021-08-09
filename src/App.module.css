@@ -16,6 +16,9 @@
   display: flex;
   flex-flow: column wrap;
   background-color: var(--skobeloff);
+  position: sticky;
+  top: 0;
+  align-self: flex-start;
 }
 
 .heading {

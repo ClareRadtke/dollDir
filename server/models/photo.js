@@ -7,6 +7,13 @@ const photoSchema = new mongoose.Schema({
     type: Schema.Types.ObjectId,
     ref: "User",
   },
+  img: {
+    type: String,
+    match: [
+      /^(https?:\/\/)?([\da-z\.-]+)\.([a-z\.]{2,6})([\/\w \.-]*)*\/?$/,
+      "Must be a valid URL",
+    ],
+  },
   desc: {
     type: String,
   },

@@ -28,12 +28,14 @@ export function Login(props) {
     return <div className={styles.errorMsg}>"Error: " {error.message}</div>;
 
   return (
-    <form className={styles.signupForm}>
+    <form autoComplete="off" className={styles.signupForm}>
       <div className={styles.header}>
         <h1>Login</h1>
       </div>
       <div className={styles.emailContainer}>
-        <label htmlFor="email">Email:</label>
+        <label htmlFor="email" className={styles.loginLabel}>
+          Email:
+        </label>
         <input
           onChange={(event) => {
             updateEmail(event.currentTarget.value);
@@ -44,10 +46,13 @@ export function Login(props) {
           required
           type="email"
           pattern=".+@.+\..+"
+          className={styles.loginInput}
         />
       </div>
       <div className={styles.passwordContainer}>
-        <label htmlFor="password">Password:</label>
+        <label htmlFor="password" className={styles.loginLabel}>
+          Password:
+        </label>
         <input
           onChange={(event) => {
             updatePassword(event.currentTarget.value);
@@ -58,6 +63,7 @@ export function Login(props) {
           name="password"
           minLength="8"
           required
+          className={styles.loginInput}
         />
       </div>
       <div className={styles.buttonContainer}>

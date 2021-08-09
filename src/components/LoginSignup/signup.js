@@ -33,13 +33,16 @@ export function Signup(props) {
   // const history = useHistory();
 
   return (
-    <form className={styles.signupForm}>
+    <form autoComplete="off" className={styles.signupForm}>
       <div className={styles.header}>
         <h1>Signup</h1>
       </div>
       <div className={styles.usernameContainer}>
-        <label htmlFor="username">Username:</label>
+        <label htmlFor="username" className={styles.signupLabel}>
+          Username:
+        </label>
         <input
+          className={styles.signupInput}
           onChange={(event) => {
             updateUsername(event.currentTarget.value);
           }}
@@ -51,8 +54,11 @@ export function Signup(props) {
         />
       </div>
       <div className={styles.emailContainer}>
-        <label htmlFor="email">Email:</label>
+        <label htmlFor="email" className={styles.signupLabel}>
+          Email:
+        </label>
         <input
+          className={styles.signupInput}
           onChange={(event) => {
             updateEmail(event.currentTarget.value);
           }}
@@ -65,8 +71,11 @@ export function Signup(props) {
         />
       </div>
       <div className={styles.passwordContainer}>
-        <label htmlFor="password">Password (8 characters minimum):</label>
+        <label htmlFor="password" className={styles.signupLabel}>
+          Password (8 characters minimum):
+        </label>
         <input
+          className={styles.signupInput}
           onChange={(event) => {
             updatePassword(event.currentTarget.value);
           }}

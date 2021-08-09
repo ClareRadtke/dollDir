@@ -21,7 +21,7 @@ const typeDefs = gql`
     author: User!
     title: String
     content: String
-    contentType: ContentType
+    contentType: ContentType!
     likesCount: Int
     commentsCount: Int
     likes: [Like]
@@ -32,6 +32,7 @@ const typeDefs = gql`
     _id: ID!
     mediaType: MediaType!
     author: User!
+    img: String
     desc: String
     contentType: ContentType!
     likesCount: Int
@@ -77,6 +78,7 @@ const typeDefs = gql`
     addUser(email: String!, username: String!, password: String!): Auth
     login(email: String!, password: String!): Auth
     addPost(title: String!, content: String!, contentType: ContentType!): Post
+    addPhoto(img: String!, desc: String!, contentType: ContentType!): Photo
   }
 `;
 

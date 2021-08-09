@@ -34,7 +34,7 @@
   color: var(--richBlack);
 }
 
-label {
+.contactLabel {
   margin-right: 0.5em;
   font-size: calc(1em + 0.5vw);
   width: 100%;
@@ -42,8 +42,8 @@ label {
   color: var(--richBlack);
 }
 
-input,
-textarea {
+.contactInput,
+.contactTextarea {
   line-height: 1.5;
   font-size: calc(1em + 0.5vw);
   width: calc(400px + 0.5vw);
@@ -51,7 +51,7 @@ textarea {
   border: 2px solid var(--richBlack);
 }
 
-textarea {
+.contactTextarea {
   /* max-width: set to the be the main container width - 1em; */
 }
 

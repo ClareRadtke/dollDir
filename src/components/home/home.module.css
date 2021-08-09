@@ -24,6 +24,7 @@
   justify-content: center;
   align-items: center;
   height: calc(352px - 2em);
+  max-width: 46.5%;
   margin: 0.5em;
   padding: 0.5em;
   flex-grow: 1;
@@ -40,7 +41,7 @@
 }
 
 .imgDiv img {
-  max-width: 100%;
+  width: 100%;
 }
 
 .writtenPostContainer {
@@ -50,11 +51,15 @@
   justify-content: center;
   align-items: center;
   width: calc(30vw - 190px);
+  max-width: 46.5%;
   height: calc(352px - 2em);
   margin: 0.5em;
   padding: 0.5em;
   flex-grow: 1;
   flex-basis: 100%;
+}
+.heading {
+  margin: 0 0 0.5em;
 }
 
 .articleContainer {
@@ -75,7 +80,8 @@
 
 .articleContainer .articleContent {
   margin: 0;
-  height: 80%;
+  height: 90%;
+  overflow: hidden;
 }
 
 .articleContent .content {
@@ -174,12 +180,14 @@
 @media only screen and (min-width: 1250px) {
   .photoContainer {
     width: calc(30vw - 190px);
+    max-width: 30.5%;
     height: calc(332px - 2em);
     flex-basis: 30%;
   }
 
   .writtenPostContainer {
     width: calc(30vw - 190px);
+    max-width: 30.5%;
     height: calc(332px - 2em);
     flex-basis: 30%;
   }

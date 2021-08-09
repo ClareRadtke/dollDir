@@ -36,7 +36,17 @@ const usersSeed = [
   },
 ];
 
-const postsSeed = [
+const mediaSeed = [
+  {
+    _id: ObjectId("610e228e80bbe784d83318fa"),
+    mediaType: "Photo",
+    author: ObjectId("610e222880b5b0848d0a511e"),
+    img: "http://placekitten.com/350/310",
+    desc: "Desc about photo....",
+    contentType: "BJD",
+    likesCount: 0,
+    commentsCount: 0,
+  },
   {
     _id: ObjectId("610e228e80bbe784d83318f4"),
     mediaType: "Post",
@@ -47,6 +57,16 @@ const postsSeed = [
     contentType: "BJD",
     likesCount: 1,
     commentsCount: 1,
+  },
+  {
+    _id: ObjectId("610e228e80bbe784d83318f9"),
+    mediaType: "Photo",
+    author: ObjectId("610e10ca314a40809eda5b2a"),
+    img: "http://placekitten.com/360/300",
+    desc: "Desc about photo....",
+    contentType: "BOTH",
+    likesCount: 0,
+    commentsCount: 0,
   },
   {
     _id: ObjectId("610e228e80bbe784d83318f5"),
@@ -60,6 +80,16 @@ const postsSeed = [
     commentsCount: 1,
   },
   {
+    _id: ObjectId("610e228e80bbe784d83318fb"),
+    mediaType: "Photo",
+    author: ObjectId("610e222880b5b0848d0a511e"),
+    img: "http://placekitten.com/390/320",
+    desc: "Desc about photo....",
+    contentType: "OOAK",
+    likesCount: 1,
+    commentsCount: 0,
+  },
+  {
     _id: ObjectId("610e228e80bbe784d83318f6"),
     mediaType: "Post",
     author: ObjectId("610e222880b5b0848d0a511e"),
@@ -71,6 +101,16 @@ const postsSeed = [
     commentsCount: 0,
   },
   {
+    _id: ObjectId("610e228e80bbe784d83318fc"),
+    mediaType: "Photo",
+    author: ObjectId("610e10ca314a40809eda5b2b"),
+    img: "http://placekitten.com/400/380",
+    desc: "Desc about photo....",
+    contentType: "BJD",
+    likesCount: 2,
+    commentsCount: 0,
+  },
+  {
     _id: ObjectId("610e228e80bbe784d83318f7"),
     mediaType: "Post",
     author: ObjectId("610e10ca314a40809eda5b2a"),
@@ -79,45 +119,6 @@ const postsSeed = [
       "Duis quis tellus varius elit porttitor vulputate nec non mi. Integer ut condimentum arcu. Suspendisse in purus ut sem finibus commodo ac id eros. Aenean finibus mauris in odio condimentum, et mattis tortor pretium. Cras eleifend auctor libero. Donec pellentesque quam et libero rhoncus, quis imperdiet velit hendrerit. Nulla ac elit sapien. Aenean et augue efficitur, commodo quam in, maximus risus.",
     contentType: "BOTH",
     likesCount: 0,
-    commentsCount: 0,
-  },
-];
-
-const photosSeed = [
-  {
-    _id: ObjectId("610e228e80bbe784d83318f9"),
-    mediaType: "Photo",
-    author: ObjectId("610e10ca314a40809eda5b2a"),
-    desc: "Desc about photo....",
-    contentType: "BOTH",
-    likesCount: 0,
-    commentsCount: 0,
-  },
-  {
-    _id: ObjectId("610e228e80bbe784d83318fa"),
-    mediaType: "Photo",
-    author: ObjectId("610e222880b5b0848d0a511e"),
-    desc: "Desc about photo....",
-    contentType: "BJD",
-    likesCount: 0,
-    commentsCount: 0,
-  },
-  {
-    _id: ObjectId("610e228e80bbe784d83318fb"),
-    mediaType: "Photo",
-    author: ObjectId("610e222880b5b0848d0a511e"),
-    desc: "Desc about photo....",
-    contentType: "OOAK",
-    likesCount: 1,
-    commentsCount: 0,
-  },
-  {
-    _id: ObjectId("610e228e80bbe784d83318fc"),
-    mediaType: "Photo",
-    author: ObjectId("610e10ca314a40809eda5b2b"),
-    desc: "Desc about photo....",
-    contentType: "BJD",
-    likesCount: 2,
     commentsCount: 0,
   },
 ];
@@ -186,15 +187,13 @@ async function runSeeds() {
     await Promise.all([
       db.User.deleteMany({}),
       db.Media.deleteMany({}),
-      // db.Photo.deleteMany({}),
       db.Like.deleteMany({}),
       db.Comment.deleteMany({}),
     ]);
 
     await Promise.all([
       db.User.collection.insertMany(usersSeed).then(printResult("user")),
-      db.Post.collection.insertMany(postsSeed).then(printResult("post")),
-      db.Photo.collection.insertMany(photosSeed).then(printResult("photo")),
+      db.Media.collection.insertMany(mediaSeed).then(printResult("media")),
       db.Like.collection.insertMany(likesSeed).then(printResult("like")),
       db.Comment.collection
         .insertMany(commentsSeed)

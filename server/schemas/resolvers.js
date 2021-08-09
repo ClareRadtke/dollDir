@@ -75,6 +75,16 @@ const resolvers = {
       });
       return post;
     },
+    async addPhoto(parent, { img, desc, contentType }, context) {
+      console.log(context.user);
+      const photo = await Photo.create({
+        img,
+        desc,
+        contentType,
+        author: context.user._id,
+      });
+      return photo;
+    },
   },
 
   Media: {

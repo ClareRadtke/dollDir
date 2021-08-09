@@ -24,6 +24,7 @@ const MEDIA = gql`
       }
       ... on Photo {
         _id
+        img
         mediaType
         contentType
         desc
@@ -49,7 +50,7 @@ function MediaQuery() {
         if (m.mediaType === "Photo") {
           return (
             <Photo
-              img="http://placekitten.com/360/300"
+              img={m.img}
               likesCount={m.likesCount}
               commentsCount={m.commentsCount}
               author={m.author.username}
@@ -98,7 +99,7 @@ export function WrittenPost(props) {
     <div className={styles.writtenPostContainer}>
       <div className={styles.articleContainer}>
         <div className={styles.articleHeader}>
-          <h3 className={styles}>{props.title}</h3>
+          <h3 className={styles.heading}>{props.title}</h3>
         </div>
 
         <div className={styles.articleContent}>
