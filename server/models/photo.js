@@ -3,12 +3,10 @@ const Schema = mongoose.Schema;
 const { Media } = require("./media");
 
 const photoSchema = new mongoose.Schema({
-  author: [
-    {
-      type: Schema.Types.ObjectId,
-      ref: "User",
-    },
-  ],
+  author: {
+    type: Schema.Types.ObjectId,
+    ref: "User",
+  },
   desc: {
     type: String,
   },
@@ -18,9 +16,11 @@ const photoSchema = new mongoose.Schema({
   },
   likesCount: {
     type: Number,
+    default: 0,
   },
   commentsCount: {
     type: Number,
+    default: 0,
   },
 });
 

@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import styles from "./signup.module.css";
 import { gql, useMutation } from "@apollo/client";
-import { useHistory } from "react-router-dom";
+// import { useHistory } from "react-router-dom";
 import { setToken } from "../../utils/auth";
 
 const ADD_USER = gql`
@@ -26,11 +26,11 @@ const ADD_USER = gql`
 `;
 
 export function Signup(props) {
-  const [addUser, { data, loading, error }] = useMutation(ADD_USER);
+  const [addUser] = useMutation(ADD_USER);
   const [email, updateEmail] = useState("");
   const [username, updateUsername] = useState("");
   const [password, updatePassword] = useState("");
-  const history = useHistory();
+  // const history = useHistory();
 
   return (
     <form className={styles.signupForm}>
@@ -93,7 +93,7 @@ export function Signup(props) {
               },
             }).then((p) => {
               setToken(p.data.addUser.token);
-              history.push("/home");
+              window.location.assign("/home");
             });
           }}
         >

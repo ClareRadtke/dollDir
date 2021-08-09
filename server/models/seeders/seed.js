@@ -14,21 +14,25 @@ const usersSeed = [
     _id: ObjectId("610e222880b5b0848d0a511e"),
     username: "Kenzie",
     email: "ken@cat.com",
+    password: "$2b$10$HfySa9GbfPmoKki9lWnS3uuB8gHQwETON9fL2bmCbLoSrTwH5nWja",
   },
   {
     _id: ObjectId("610e10ca314a40809eda5b2a"),
     username: "Oscar",
     email: "oc@cat.com",
+    password: "$2b$10$RjAkeIxW9OwMlPqvCjtBIeC4g0Cq5ce/7KcnR5RsOCcpqs7rxdtsi",
   },
   {
     _id: ObjectId("610e10ca314a40809eda5b2b"),
     username: "Toml",
     email: "toml@cat.com",
+    password: "$2b$10$ZEBig5NcIgvsi2VwQ3i6ROmrEc5R4mil4ZaAtMJP2nq2vYxajhuzu",
   },
   {
     _id: ObjectId("610e10ca314a40809eda5b2c"),
     username: "Cleo",
     email: "cleo@cat.com",
+    password: "$2b$10$eU1Hn2nXT1eU/Cf89xTzp.MSrJLSx3B1Rw6QgAXYGACXUIRoRcDAS",
   },
 ];
 

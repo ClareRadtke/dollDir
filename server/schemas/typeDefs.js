@@ -21,7 +21,7 @@ const typeDefs = gql`
     author: User!
     title: String
     content: String
-    contentType: ContentType!
+    contentType: ContentType
     likesCount: Int
     commentsCount: Int
     likes: [Like]
@@ -76,6 +76,7 @@ const typeDefs = gql`
   type Mutation {
     addUser(email: String!, username: String!, password: String!): Auth
     login(email: String!, password: String!): Auth
+    addPost(title: String!, content: String!, contentType: ContentType!): Post
   }
 `;
 

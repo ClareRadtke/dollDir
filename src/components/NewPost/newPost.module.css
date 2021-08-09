@@ -1,0 +1,91 @@
+:root {
+  /* Primary colors 60% */
+  --richBlack: #0c0d12;
+  --platinum: #ebebeb;
+  --mountbattenPink: #987f95;
+  --skobeloff: #096b72;
+  /* Secondary color 30% */
+
+  /* Pop/CTA colors 10% */
+
+  /* Border */
+}
+
+.buttonContainer {
+  margin: 1em 1em;
+  padding: 0.5em 0;
+  display: flex;
+  flex-flow: row wrap;
+  align-items: center;
+  justify-content: center;
+  background-color: var(--mountbattenPink);
+}
+.button {
+  font-size: calc(1em + 0.5vw);
+  display: flex;
+  border: none;
+  padding: 0.5rem 1rem;
+  border-radius: 0.5rem;
+  margin: 0.5rem 2em 1em;
+  background: mistyrose;
+  color: black;
+  /* font-family: "Nunito", sans-serif; */
+  /* font-weight: bold; */
+  cursor: pointer;
+  text-align: center;
+  align-self: center;
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  line-height: 1;
+  text-decoration: none;
+  list-style: none;
+}
+
+.button.save {
+  background: var(--platinum);
+  color: var(--mountbattenPink);
+  border: 4px solid var(--mountbattenPink);
+  margin: 0;
+  font-weight: bold;
+}
+
+.homeContent {
+  display: flex;
+  flex-flow: row wrap;
+  align-items: flex-start;
+  justify-content: center;
+  width: 100%;
+  height: 90vh;
+}
+
+.newPostForm {
+  display: flex;
+  flex-flow: column nowrap;
+  align-items: center;
+  background-color: var(--platinum);
+  margin: 0 0 2em;
+  padding: 0 2em 0.5em;
+  width: 100%;
+  height: 95%;
+}
+
+input,
+textarea {
+  line-height: 1.5;
+  font-size: calc(1em + 0.5vw);
+  background-color: var(--platinum);
+  border: 2px solid var(--richBlack);
+  width: 90%;
+  font-family: sans-serif;
+  padding: 0 0.5em;
+  outline: none;
+}
+
+textarea {
+  padding: 0.5em;
+  height: 90%;
+}
+
+label.contentType {
+  width: 93%;
+}

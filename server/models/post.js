@@ -4,12 +4,10 @@ const { Media } = require("./media");
 
 // TODO: needs a date key with creation date
 const postSchema = new mongoose.Schema({
-  author: [
-    {
-      type: Schema.Types.ObjectId,
-      ref: "User",
-    },
-  ],
+  author: {
+    type: Schema.Types.ObjectId,
+    ref: "User",
+  },
   title: {
     type: String,
     required: "required",
@@ -24,9 +22,11 @@ const postSchema = new mongoose.Schema({
   },
   likesCount: {
     type: Number,
+    default: 0,
   },
   commentsCount: {
     type: Number,
+    default: 0,
   },
 });
 

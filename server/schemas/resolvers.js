@@ -53,17 +53,27 @@ const resolvers = {
       const user = await User.findOne({ email });
 
       if (!user) {
-        throw new AuthenticationError("No profile with this email found!");
+        throw new AuthenticationError("Incorrect Password or Email!");
       }
 
       const correctPassword = await user.validPassword(password);
 
       if (!correctPassword) {
-        throw new AuthenticationError("Incorrect password!");
+        throw new AuthenticationError("Incorrect Password or Email!");
       }
 
       const token = signToken(user);
       return { token, user };
+    },
+    async addPost(parent, { title, content, contentType }, context) {
+      console.log(context.user);
+      const post = await Post.create({
+        title,
+        content,
+        contentType,
+        author: context.user._id,
+      });
+      return post;
     },
   },
 

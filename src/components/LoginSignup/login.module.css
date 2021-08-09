@@ -9,6 +9,10 @@
 
   /* Border */
 }
+.errorMsg {
+  padding: 2em;
+  font-size: calc(12px + 0.5vw);
+}
 
 .signupForm {
   display: flex;

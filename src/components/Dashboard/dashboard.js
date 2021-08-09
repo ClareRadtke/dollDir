@@ -1,76 +1,82 @@
 import React from "react";
 
-import styles from "./home.module.css";
+import styles from "./dashboard.module.css";
 import heartRed from "./icons/heartRed32x32.png";
 import comment from "./icons/comment32x32.png";
 
 import { useQuery, gql } from "@apollo/client";
+import { getActiveUser } from "../../utils/auth";
 
 const MEDIA = gql`
-  query GetMedia {
-    media {
-      ... on Post {
+  query Query($userUserId: String!) {
+    user(userId: $userUserId) {
+      _id
+      username
+      posts {
         _id
         mediaType
-        contentType
-        author {
-          username
-          _id
-        }
         title
         content
+        contentType
+        likesCount
+        commentsCount
+      }
+      photos {
         commentsCount
         likesCount
-      }
-      ... on Photo {
-        _id
-        mediaType
         contentType
         desc
-        author {
-          _id
-          username
-        }
-        commentsCount
-        likesCount
+        mediaType
+        _id
       }
     }
   }
 `;
 
 function MediaQuery() {
-  const { loading, error, data } = useQuery(MEDIA);
+  const activeUser = getActiveUser();
+  console.log(activeUser);
+  const { loading, error, data } = useQuery(MEDIA, {
+    variables: { userUserId: activeUser._id },
+  });
 
   if (loading) return <div>"Loading MediaQuery ..."</div>;
   if (error) return <div>"Error:", {error.message}</div>;
+  console.log("User mediaQuery load success!", data);
+  const noMedia = data.user.photos.length < 1 && data.user.posts.length < 1;
   return (
     <>
-      {data.media.map((m) => {
-        if (m.mediaType === "Photo") {
-          return (
-            <Photo
-              img="http://placekitten.com/360/300"
-              likesCount={m.likesCount}
-              commentsCount={m.commentsCount}
-              author={m.author.username}
-              desc={m.desc}
-            ></Photo>
-          );
-        }
-        if (m.mediaType === "Post") {
-          return (
-            <WrittenPost
-              title={m.title}
-              content={m.content}
-              username={m.author.username}
-              date="5/8/2021"
-              commentsCount={m.commentsCount}
-              likesCount={m.likesCount}
-            ></WrittenPost>
-          );
-        }
-        return null;
+      {data.user.photos.map((photo) => {
+        return (
+          <Photo
+            img="http://placekitten.com/360/300"
+            likesCount={photo.likesCount}
+            commentsCount={photo.commentsCount}
+            // author={photo.author.username}
+            desc={photo.desc}
+          ></Photo>
+        );
       })}
+      {data.user.posts.map((post) => {
+        return (
+          <WrittenPost
+            title={post.title}
+            content={post.content}
+            // username={post.author.username}
+            date="5/8/2021"
+            commentsCount={post.commentsCount}
+            likesCount={post.likesCount}
+          ></WrittenPost>
+        );
+      })}
+      {noMedia ? (
+        <div>
+          <p>
+            No Posts or Photos added yet! Click on "new post" or "new photo" to
+            begin.
+          </p>
+        </div>
+      ) : null}
     </>
   );
 }
@@ -136,7 +142,7 @@ export function PostInfo(props) {
   );
 }
 
-export function Home(props) {
+export function Dashboard(props) {
   return (
     <div className={styles.homeContent}>
       <MediaQuery />

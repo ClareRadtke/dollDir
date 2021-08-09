@@ -9,6 +9,8 @@ import { Login } from "../LoginSignup/login";
 import { Contact } from "../Contact/contact";
 import { About } from "../About/about";
 import { Home } from "../Home/home";
+import { Dashboard } from "../Dashboard/dashboard";
+import { NewPost } from "../NewPost/newPost";
 
 export function MainContent(props) {
   return (
@@ -31,6 +33,14 @@ export function MainContent(props) {
 
       <Route path="/home">
         <Home />
+      </Route>
+
+      <Route path="/dashboard">
+        <Dashboard />
+      </Route>
+
+      <Route path="/new-post">
+        <NewPost />
       </Route>
 
       <Route exact path="/">

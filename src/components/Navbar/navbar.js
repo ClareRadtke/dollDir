@@ -1,9 +1,6 @@
 import React from "react";
 import { destroyToken, isValidToken } from "../../utils/auth";
-// import { Switch, Route } from "react-router-dom";
 import styles from "./navbar.module.css";
-
-// import { Signup } from "../LoginSignup/signup";
 
 export function Link(props) {
   return (
@@ -14,10 +11,6 @@ export function Link(props) {
     </li>
   );
 }
-
-// active link & response
-// take in link text
-// take in href link
 
 export function Navbar(props) {
   return (

@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import styles from "./login.module.css";
 import { gql, useMutation } from "@apollo/client";
-import { useHistory } from "react-router-dom";
+// import { useHistory } from "react-router-dom";
 import { setToken } from "../../utils/auth";
 
 const LOGIN = gql`
@@ -18,10 +18,14 @@ const LOGIN = gql`
 `;
 
 export function Login(props) {
-  const [login, { data, loading, error }] = useMutation(LOGIN);
+  const [login, { loading, error }] = useMutation(LOGIN);
   const [email, updateEmail] = useState("");
   const [password, updatePassword] = useState("");
-  const history = useHistory();
+  // const history = useHistory();
+
+  if (loading) return <div>"Loading MediaQuery ..."</div>;
+  if (error)
+    return <div className={styles.errorMsg}>"Error: " {error.message}</div>;
 
   return (
     <form className={styles.signupForm}>
@@ -70,7 +74,7 @@ export function Login(props) {
               },
             }).then((p) => {
               setToken(p.data.login.token);
-              history.push("/home");
+              window.location.assign("/home");
             });
           }}
         >
