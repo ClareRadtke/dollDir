@@ -13,6 +13,7 @@
 p,
 a {
   line-height: 1.5;
+  font-size: calc(12px + 0.5vw);
 }
 
 .capabilityContainer {
@@ -35,4 +36,5 @@ a {
   border: 3px solid var(--richBlack);
   margin-left: 1.5em;
   font-weight: bold;
+  font-size: calc(12px + 0.3vw);
 }
