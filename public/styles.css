@@ -19,3 +19,10 @@
   overflow: auto;
   background-color: var(--platinum);
 }
+
+@media only screen and (max-width: 481px) {
+  #root {
+    flex-flow: column nowrap;
+    background-color: var(--platinum);
+  }
+}

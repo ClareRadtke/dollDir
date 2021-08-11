@@ -26,7 +26,8 @@
     "build": "react-scripts build",
     "test": "react-scripts test",
     "eject": "react-scripts eject",
-    "start:server": "nodemon -w ./server server/server.js",
+    "start:server": "node server/server.js",
+    "start:server:dev": "nodemon -w ./server server/server.js",
     "seed": "node server/models/seeders/seed.js"
   },
   "eslintConfig": {

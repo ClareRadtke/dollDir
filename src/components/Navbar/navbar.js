@@ -5,7 +5,7 @@ import styles from "./navbar.module.css";
 export function Link(props) {
   return (
     <li className={props.active ? `${styles.active}` : `${styles.navLink}`}>
-      <a href={props.to} onClick={props.onClick}>
+      <a className={styles.navALink} href={props.to} onClick={props.onClick}>
         {props.children}
       </a>
     </li>
@@ -15,7 +15,7 @@ export function Link(props) {
 export function Navbar(props) {
   return (
     <nav className={styles.navbar}>
-      <ul>
+      <ul className={styles.navUl}>
         {isValidToken() ? (
           <Link to="/login" onClick={destroyToken}>
             logout
