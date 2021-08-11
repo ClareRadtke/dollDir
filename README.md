@@ -1,6 +1,20 @@
 # Doll Directory
 
+[Doll Directory](https://doll-directory.herokuapp.com/)
 A website created for the doll customising community, bringing the different aspects of the hobby together
+![Video demonstration of Doll Directory]()
+
+## Usage
+
+<!-- Example:
+In your terminal type:
+- `./run.sh` to run the database
+- `node src/index.js` to run the EMS -->
+
+## Prerequisite
+
+<!-- Example:
+Docker  -->
 
 ## User Story
 
@@ -17,25 +31,55 @@ API: GraphQL
 Name: Doll Directory
 Concept:
 A website for the Doll Customising community.
-You will be able to select if your interest is in Ball Jointed Dolls (Artist sculpted resin or vinyl dolls),
-One Of A Kind Custom Playline Dolls (for example: barbie, monster high, rainbow high dolls - dolls that can be brought in toystores) or both and the site will tailor its content for your preference.
-The home page will have a feed of the most recent photos and blogs.
-One Of A Kind Custom Playline Doll Users:
-Users will be able to post blogs and photos and have a personal dashboard (similar concept to instagram).
-Directory of playline dolls, showing factory fullset, blank dolls, wiped faces - users can submit additional dolls.
 
-Ball Jointed Doll Users:
-Users will be able to post blogs and photos and have a personal dashboard (similar concept to instagram).
+## Project Requirements:
 
-Artists will be able to record sales, buyers, serial numbers and additional details for legitimacy reference in the secondhand market.
-Buyers can submit to artists if they have purchased a secondhand doll with the details for addition to the sales records and make requests to the artist for confirmation of legitimacy prior to purchase.
+- [x] Use React for the front end.
+- [x] Use GraphQL with a Node.js and Express.js server.
+- [x] Use MongoDB and the Mongoose ODM for the database.
+- Use queries and mutations for:
+  - [x] retrieving,
+  - [x] adding,
+  - [ ] updating,
+  - [ ] deleting data
+- [x] Be deployed using Heroku (with data).
+- [x] Be responsive.
+- [x] Be interactive (i.e., accept and respond to user input).
+- [x] Include authentication (JWT).
+- [ ] Protect sensitive API key information on the server.
 
-Future state:
-direct messaging,
-auctions/stores,
-short video uploads,
-Directory of BJD Artist dolls - sculpt, artist, genre - need artist permissions/participation to post.
-BJD dimensions/sizing.
+## Icon Attributes:
+
+All icons from [flaticon.com](https://www.flaticon.com/):
+
+- Heart Icons made by [Pixel perfect](https://icon54.com/)
+- Comment icon made by [Freepik](https://www.freepik.com)
+
+<!--
+heart icons: `<div>Icons made by <a href="https://icon54.com/" title="Pixel perfect">Pixel perfect</a> from <a href="https://www.flaticon.com/" title="Flaticon">www.flaticon.com</a></div>`
+
+comment icon: `<div>Icons made by <a href="https://www.freepik.com" title="Freepik">Freepik</a> from <a href="https://www.flaticon.com/" title="Flaticon">www.flaticon.com</a></div>` -->
+
+## Future state:
+
+- Home page and Dash are ordered by most recent content.
+- Lazy loading.
+- FAQ page (definitions, explanation of the hobby).
+- Filter your visible content to reflect your interest - BJD's, OOAK or both - and the media type - photos, written posts or both.
+- Direct messaging.
+- Convert to a PWA.
+- Auctions/stores.
+- Extend the filter to cover stores, auctions, sales posts.
+- Short video uploads.
+- Directory of BJD Artist dolls - sculpt, artist, genre - need artist permissions/participation.
+- BJD dimensions/sizing.
+- BJD Artists will be able to record sales, buyers, serial numbers and additional details for legitimacy reference in the secondhand market.
+- Buyers can submit to artists if they have purchased a secondhand doll with the details for addition to the sales records and make requests to the artist for confirmation of legitimacy prior to purchase.
+- Directory of playline dolls, showing factory fullset, blank dolls, wiped faces - users can submit additional dolls.
+
+<!-- ## Business Context -->
+
+<!-- default create react app readme -->
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
@@ -105,9 +149,3 @@ This section has moved here: https://facebook.github.io/create-react-app/docs/de
 ### `npm run build` fails to minify
 
 This section has moved here: https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify
-
-#### attribution links
-
-heat icons: `<div>Icons made by <a href="https://icon54.com/" title="Pixel perfect">Pixel perfect</a> from <a href="https://www.flaticon.com/" title="Flaticon">www.flaticon.com</a></div>`
-
-comment icon: `<div>Icons made by <a href="https://www.freepik.com" title="Freepik">Freepik</a> from <a href="https://www.flaticon.com/" title="Flaticon">www.flaticon.com</a></div>`
