@@ -13,7 +13,7 @@
 
 .homeContent {
   display: flex;
-  flex-flow: row wrap;
+  flex-flow: column nowrap;
   width: 100%;
 }
 
@@ -24,10 +24,8 @@
   justify-content: center;
   align-items: center;
   height: calc(352px - 2em);
-  max-width: 46.5%;
-  margin: 0.5em;
-  padding: 0.5em;
-  flex-grow: 1;
+  margin: 0.5em 0;
+  padding: 0.25em 0;
   flex-basis: 100%;
 }
 
@@ -35,7 +33,6 @@
   display: flex;
   width: 100%;
   overflow: hidden;
-  align-items: center;
   justify-content: center;
   flex-basis: 100%;
 }
@@ -50,16 +47,12 @@
   flex-flow: column nowrap;
   justify-content: center;
   align-items: center;
-  width: calc(30vw - 190px);
-  max-width: 46.5%;
-  height: calc(352px - 2em);
-  margin: 0.5em;
-  padding: 0.5em;
+  width: 100%;
+  height: 70%;
+  margin: 0.5em 0;
+  padding: 0.25em 0;
   flex-grow: 1;
   flex-basis: 100%;
-}
-.heading {
-  margin: 0 0 0.5em;
 }
 
 .articleContainer {
@@ -67,26 +60,26 @@
   flex-flow: column nowrap;
   justify-content: center;
   align-items: center;
-  max-width: 30vw;
-  max-height: 100%;
+  width: 90%;
+  height: 100%;
   margin: 0.5em 1em;
 }
 
-.articleContainer .title {
+.heading {
   margin: 0 0 0.5em;
-  font-size: calc(12px + 0.4vw);
-  padding: 0;
+  font-size: calc(25px + 0.5vw);
 }
 
-.articleContainer .articleContent {
+.articleContent {
   margin: 0;
   height: 90%;
   overflow: hidden;
 }
 
-.articleContent .content {
+.content {
   margin: 0 0 0.5em;
-  font-size: calc(12px + 0.2vw);
+  font-size: calc(17px + 0.5vw);
+  line-height: 1.5;
 }
 
 .articleContainer .postInfo {
@@ -117,18 +110,18 @@
   padding: 0.25em 0 0;
 }
 
-.posterInfo h5 {
-  font-size: calc(12px + 0.2vw);
-}
-
-.posterUsername {
-  margin: 0 0.5em;
-  align-self: center;
-}
-
+.posterUsername,
+.posterDesc,
 .datePosted {
-  margin: 0.5em;
+  margin: 0 0.5em;
+  align-self: flex-end;
+  font-size: calc(13.5px + 0.5vw);
 }
+
+/* .datePosted {
+  margin: 0.5em;
+  font-size: calc(12px + 0.5vw);
+} */
 
 .articleContainer .likesCommentsContainer {
   align-self: center;
@@ -160,8 +153,65 @@
   font-size: calc(16px + 0.2vw);
 }
 
-/* increase images per line as browser gets larger using media queries
-   this first query makes two images per line at 900px width */
+@media only screen and (min-width: 481px) {
+  .homeContent {
+    flex-flow: row wrap;
+  }
+
+  .photoContainer {
+    height: calc(352px - 2em);
+    min-width: 360px;
+    max-width: 46.5%;
+    margin: 0.5em;
+    padding: 0.5em;
+    flex-grow: 1;
+  }
+  .imgDiv {
+    align-items: center;
+  }
+
+  .writtenPostContainer {
+    width: calc(30vw - 190px);
+    max-width: 46.5%;
+    height: calc(352px - 2em);
+    margin: 0.5em;
+    padding: 0.5em;
+    flex-grow: 1;
+    flex-basis: 100%;
+  }
+
+  .articleContainer {
+    max-width: 30vw;
+    max-height: 100%;
+  }
+  .heading {
+    margin: 0 0 0.5em;
+    font-size: calc(14px + 0.7vw);
+    padding: 0;
+  }
+  .articleContent {
+    margin: 0;
+    height: 90%;
+    overflow: hidden;
+  }
+  .content {
+    margin: 0 0 0.5em;
+    font-size: calc(12px + 0.2vw);
+  }
+  .articleContainer .postInfo {
+    flex-flow: row-reverse nowrap;
+  }
+  .articleContainer .posterInfo {
+    padding: 0;
+  }
+
+  .posterUsername,
+  .posterDesc,
+  .datePosted {
+    font-size: calc(12px + 0.2vw);
+  }
+}
+
 @media only screen and (min-width: 900px) {
   .photoContainer {
     width: calc(30vw - 190px);
@@ -176,7 +226,6 @@
   }
 }
 
-/* three images per line when browser width exceeds 1400px */
 @media only screen and (min-width: 1250px) {
   .photoContainer {
     width: calc(30vw - 190px);
@@ -193,7 +242,6 @@
   }
 }
 
-/* four images per line when browser width exceeds 1600px */
 @media only screen and (min-width: 1550px) {
   .photoContainer {
     width: calc(30vw - 190px);

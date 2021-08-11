@@ -129,7 +129,7 @@ export function PostInfo(props) {
       <div className={styles.posterInfo}>
         <h5 className={styles.posterUsername}>{props.username}</h5>
         {props.children && (
-          <h5 className={styles.posterComment}>{props.children}</h5>
+          <h5 className={styles.posterDesc}>{props.children}</h5>
         )}
         {props.date && <h5 className={styles.datePosted}>{props.date}</h5>}
       </div>
