@@ -15,13 +15,11 @@ function App() {
         <Navbar />
         {isValidToken() ? (
           <a href="/home" className={styles.heading}>
-            Doll <br />
-            Directory
+            Doll Directory
           </a>
         ) : (
           <a href="/" className={styles.heading}>
-            Doll <br />
-            Directory
+            Doll Directory
           </a>
         )}
 

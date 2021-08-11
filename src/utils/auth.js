@@ -1,3 +1,5 @@
+import { useHistory } from "react-router-dom";
+
 const LS_TOKEN_KEY = "token";
 
 export function setToken(token) {
@@ -39,4 +41,11 @@ export function destroyToken() {
   localStorage.removeItem(LS_TOKEN_KEY);
 
   // TODO: Invalidate token
+}
+
+export function useAuth() {
+  const history = useHistory();
+  if (!isValidToken()) {
+    history.push("/login");
+  }
 }

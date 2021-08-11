@@ -31,7 +31,10 @@ const resolvers = {
       return Photo.find({ mediaType: "Photo" });
     },
 
-    media(parent, { contentType, mediaType }) {
+    media(parent, { contentType, mediaType }, context) {
+      if (!context.user) {
+        return [];
+      }
       const filter = {};
 
       if (contentType != null) filter.contentType = contentType;

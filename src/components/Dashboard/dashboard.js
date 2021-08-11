@@ -5,7 +5,7 @@ import heartRed from "./icons/heartRed32x32.png";
 import comment from "./icons/comment32x32.png";
 
 import { useQuery, gql } from "@apollo/client";
-import { getActiveUser } from "../../utils/auth";
+import { getActiveUser, useAuth } from "../../utils/auth";
 
 const MEDIA = gql`
   query Query($userUserId: String!) {
@@ -35,6 +35,7 @@ const MEDIA = gql`
 `;
 
 function MediaQuery() {
+  useAuth();
   const activeUser = getActiveUser();
   console.log(activeUser);
   const { loading, error, data } = useQuery(MEDIA, {

@@ -18,4 +18,5 @@
   display: flex;
   flex-flow: column nowrap;
   align-self: flex-end;
+  order: 2;
 }

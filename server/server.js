@@ -1,4 +1,5 @@
 const express = require("express");
+const path = require("path");
 const { ApolloServer } = require("apollo-server-express");
 const { typeDefs, resolvers } = require("./schemas");
 const { authMiddleware } = require("./utils/auth");
@@ -21,6 +22,10 @@ const db = require("./config/connection");
 
   app.use(express.urlencoded({ extended: false }));
   app.use(express.json());
+
+  app.get("*", (req, res) => {
+    res.sendFile(path.resolve("./build/index.html"));
+  });
 
   db.once("open", () => {
     app.listen(PORT, () => {

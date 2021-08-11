@@ -2,6 +2,7 @@ import React, { useState } from "react";
 import styles from "./newPhoto.module.css";
 import { gql, useMutation } from "@apollo/client";
 import { useHistory } from "react-router-dom";
+import { useAuth } from "../../utils/auth";
 
 const ADD_PHOTO = gql`
   mutation Mutation(
@@ -27,6 +28,7 @@ const ADD_PHOTO = gql`
 `;
 
 export function NewPhoto(props) {
+  useAuth();
   const [addPhoto] = useMutation(ADD_PHOTO);
   const [img, updateImg] = useState("");
   const [desc, updateDesc] = useState("");

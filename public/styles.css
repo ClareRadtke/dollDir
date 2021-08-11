@@ -13,16 +13,17 @@
 
 #root {
   display: flex;
-  flex-flow: row nowrap;
+  flex-flow: column nowrap;
   width: 100%;
   align-items: flex-start;
+  align-self: flex-start;
   overflow: auto;
   background-color: var(--platinum);
 }
 
-@media only screen and (max-width: 481px) {
+@media only screen and (min-width: 481px) {
   #root {
-    flex-flow: column nowrap;
+    flex-flow: row nowrap;
     background-color: var(--platinum);
   }
 }

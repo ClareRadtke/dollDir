@@ -1,10 +1,9 @@
 import React from "react";
-
 import styles from "./home.module.css";
 import heartRed from "./icons/heartRed32x32.png";
 import comment from "./icons/comment32x32.png";
-
 import { useQuery, gql } from "@apollo/client";
+import { useAuth } from "../../utils/auth";
 
 const MEDIA = gql`
   query GetMedia {
@@ -41,6 +40,7 @@ const MEDIA = gql`
 
 function MediaQuery() {
   const { loading, error, data } = useQuery(MEDIA);
+  useAuth();
 
   if (loading) return <div>"Loading MediaQuery ..."</div>;
   if (error) return <div>"Error:", {error.message}</div>;

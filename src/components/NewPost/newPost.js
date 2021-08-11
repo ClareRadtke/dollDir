@@ -2,6 +2,7 @@ import React, { useState } from "react";
 import styles from "./newPost.module.css";
 import { gql, useMutation } from "@apollo/client";
 import { useHistory } from "react-router-dom";
+import { useAuth } from "../../utils/auth";
 
 const ADD_POST = gql`
   mutation Mutation(
@@ -25,6 +26,7 @@ const ADD_POST = gql`
 `;
 
 export function NewPost(props) {
+  useAuth();
   const [addPost] = useMutation(ADD_POST);
   const [title, updateTitle] = useState("");
   const [content, updateContent] = useState("");

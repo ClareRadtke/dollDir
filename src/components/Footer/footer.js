@@ -4,7 +4,9 @@ import styles from "./footer.module.css";
 export function Link(props) {
   return (
     <li className={props.active ? `${styles.active}` : `${styles.footerLink}`}>
-      <a href={props.to}>{props.children}</a>
+      <a className={styles.footerLinkA} href={props.to}>
+        {props.children}
+      </a>
     </li>
   );
 }
@@ -12,7 +14,7 @@ export function Link(props) {
 export function Footer(props) {
   return (
     <footer className={styles.footer}>
-      <ul>
+      <ul className={styles.footerUl}>
         <Link to="/contact">contact</Link>
         <Link to="/about">about</Link>
       </ul>
