@@ -11,12 +11,22 @@
 }
 
 .contentContainer {
-  width: calc(100% - 244px);
+  width: 100vw;
   height: 100vh;
   background-color: var(--platinum);
   margin: 0 0;
   display: flex;
   flex-flow: column nowrap;
-  align-self: flex-end;
+  /* align-self: flex-end; */
   order: 2;
+}
+
+@media only screen and (min-width: 481px) {
+  .contentContainer {
+    width: calc(100% - 244px);
+    display: flex;
+    flex-flow: column nowrap;
+    align-self: flex-end;
+    order: 2;
+  }
 }

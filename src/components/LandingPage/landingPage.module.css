@@ -3,42 +3,116 @@
   --richBlack: #0c0d12;
   --platinum: #ebebeb;
   --mountbattenPink: #987f95;
+  --skobeloff: #096b72;
   /* Secondary color 30% */
+  --middleBluePurple: #827db5;
 
   /* Pop/CTA colors 10% */
 
   /* Border */
 }
 
-p,
-a {
-  line-height: 1.5;
-  font-size: calc(12px + 0.5vw);
-}
-.content,
-.hobbyType {
-  font-weight: bold;
+.capabilityContainer {
+  height: fit-content;
+  width: 100%;
+  display: flex;
+  flex-flow: column nowrap;
+  justify-content: center;
+  align-items: center;
+  margin: 0.5em 0;
+  background-color: var(--mountbattenPink);
+  background: linear-gradient(
+    180deg,
+    rgba(131, 125, 179, 1) 0%,
+    rgba(152, 127, 149, 1) 30%,
+    rgba(150, 127, 152, 1) 65%,
+    rgba(130, 125, 181, 1) 100%
+  );
+
+  color: var(--richBlack);
 }
 
-.capabilityContainer {
-  height: 12em;
-  display: flex;
-  flex-flow: row nowrap;
-  justify-content: space-around;
-  align-items: center;
-  margin: 1em 1em;
-  background-color: var(--mountbattenPink);
-  color: var(--richBlack);
+.landingP,
+.landingA {
+  line-height: 1.5;
+  font-size: calc(14.5px + 0.5vw);
+  font-weight: bold;
+}
+.content {
+  margin: 1em;
+  padding: 0.5em;
+  width: 80%;
+  height: fit-content;
+  text-align: center;
+  line-height: 2;
+  font-size: calc(14.5px + 0.7vw);
+}
+.hobbyType {
+  text-align: left;
+  margin: 1em;
+  padding: 1em;
+  width: 80%;
+  overflow-wrap: break-word;
 }
 
 .signup.button {
+  align-self: flex-end;
   text-decoration: none;
-  padding: 0.5rem 1rem;
+  text-align: center;
+  padding: 0.5rem;
   border-radius: 0.25rem;
-  background: var(--platinum);
-  color: var(--richBlack);
-  border: 3px solid var(--richBlack);
-  margin-left: 1.5em;
+  background: var(--middleBluePurple);
+  color: var(--platinum);
+  border: 3px solid var(--platinum);
+  margin: 1em 3em 1em 1.5em;
   font-weight: bold;
-  font-size: calc(12px + 0.3vw);
+  font-size: calc(12px + 0.5vw);
+}
+
+@media only screen and (min-width: 481px) {
+  .capabilityContainer {
+    height: 40%;
+    min-width: 544px;
+    width: calc(100% - 2em);
+    flex-flow: row nowrap;
+    margin: 1em 1em;
+    background: var(--middleBluePurple);
+    background: linear-gradient(
+      90deg,
+      rgba(152, 127, 149, 1) 0%,
+      rgba(130, 125, 181, 1) 100%
+    );
+  }
+
+  .landingP,
+  .landingA {
+    font-size: calc(12px + 0.5vw);
+  }
+  .content {
+    padding: 1em;
+    min-width: 200px;
+    width: 60%;
+    line-height: 1.8;
+    font-size: calc(12px + 0.7vw);
+  }
+  .hobbyType {
+    min-width: 90px;
+    width: 10%;
+  }
+
+  .signup.button {
+    align-self: center;
+    overflow-wrap: break-word;
+    min-width: 4em;
+    max-width: 6em;
+    color: var(--platinum);
+    border: 3px solid var(--middleBluePurple);
+    font-size: calc(12px + 0.5vw);
+  }
+
+  .signup.button:hover {
+    background-color: var(--skobeloff);
+    color: var(--platinum);
+    border-color: var(--platinum);
+  }
 }
