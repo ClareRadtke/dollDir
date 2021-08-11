@@ -2,7 +2,7 @@
 
 [Doll Directory](https://doll-directory.herokuapp.com/)
 A website created for the doll customising community, bringing the different aspects of the hobby together
-![Video demonstration of Doll Directory]()
+![Video demonstration of Doll Directory](./public/dollDirDemo.mov)
 
 ## Usage
 
