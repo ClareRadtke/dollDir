@@ -35,7 +35,7 @@ export function Signup(props) {
   return (
     <form autoComplete="off" className={styles.signupForm}>
       <div className={styles.header}>
-        <h1>Signup</h1>
+        <h1 className={styles.heading}>Signup</h1>
       </div>
       <div className={styles.usernameContainer}>
         <label htmlFor="username" className={styles.signupLabel}>

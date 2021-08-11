@@ -8,6 +8,7 @@ import { LoggedInNavbar } from "./components/Navbar/loggedInNav";
 import { MainContent } from "./components/MainContent/index";
 import { Footer } from "./components/Footer/footer";
 
+// TODO: Remove login/signup options when on Login or Signup pages
 function App() {
   return (
     <>

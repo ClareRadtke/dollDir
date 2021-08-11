@@ -61,12 +61,12 @@
   text-align: center;
   padding: 0.5rem;
   border-radius: 0.25rem;
-  background: var(--middleBluePurple);
   color: var(--platinum);
+  background: var(--middleBluePurple);
   border: 3px solid var(--platinum);
-  margin: 1em 3em 1em 1.5em;
+  margin: 1em 1.5em;
   font-weight: bold;
-  font-size: calc(12px + 0.5vw);
+  font-size: calc(14px + 0.5vw);
 }
 
 @media only screen and (min-width: 481px) {
@@ -76,7 +76,7 @@
     width: calc(100% - 2em);
     flex-flow: row nowrap;
     margin: 1em 1em;
-    background: var(--middleBluePurple);
+    background-color: var(--middleBluePurple);
     background: linear-gradient(
       90deg,
       rgba(152, 127, 149, 1) 0%,
@@ -105,6 +105,7 @@
     overflow-wrap: break-word;
     min-width: 4em;
     max-width: 6em;
+    margin: 1em 3em 1em 1.5em;
     color: var(--platinum);
     border: 3px solid var(--middleBluePurple);
     font-size: calc(12px + 0.5vw);

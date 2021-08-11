@@ -39,7 +39,7 @@
   text-decoration: none;
   font-weight: bold;
   line-height: 1.5;
-  font-size: calc(12px + 0.5vw);
+  font-size: calc(15px + 0.5vw);
 }
 
 .active {
@@ -61,5 +61,6 @@
 
   .footerLinkA {
     padding-left: 1.5em;
+    font-size: calc(12px + 0.5vw);
   }
 }

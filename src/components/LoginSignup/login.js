@@ -30,7 +30,7 @@ export function Login(props) {
   return (
     <form autoComplete="off" className={styles.signupForm}>
       <div className={styles.header}>
-        <h1>Login</h1>
+        <h1 className={styles.heading}>Login</h1>
       </div>
       <div className={styles.emailContainer}>
         <label htmlFor="email" className={styles.loginLabel}>

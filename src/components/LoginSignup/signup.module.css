@@ -3,6 +3,7 @@
   --richBlack: #0c0d12;
   --platinum: #ebebeb;
   --mountbattenPink: #987f95;
+  --skobeloff: #096b72;
   /* Secondary color 30% */
 
   /* Pop/CTA colors 10% */
@@ -15,18 +16,25 @@
   flex-flow: column nowrap;
   align-items: center;
   background-color: var(--platinum);
-  margin: 2em;
-  padding: 2em 2em;
+  width: calc(100% - 2em);
+  height: fit-content;
+  padding: 1em;
 }
 
-.header h1 {
+.header {
+  display: flex;
+  width: 100%;
+  justify-content: center;
+}
+
+.heading {
   font-size: calc(2em + 0.5vw);
   color: var(--richBlack);
 }
 
 .signupLabel {
   margin-right: 0.5em;
-  font-size: calc(1em + 0.5vw);
+  font-size: calc(1.3em + 0.5vw);
   color: var(--richBlack);
 }
 
@@ -35,7 +43,7 @@
   font-size: calc(1em + 0.5vw);
   background-color: var(--platinum);
   border: 2px solid var(--richBlack);
-  width: calc(400px + 0.5vw);
+  width: 95%;
 }
 
 .usernameContainer,
@@ -43,19 +51,20 @@
 .passwordContainer {
   display: flex;
   flex-flow: column nowrap;
+  width: calc(100% - 2em);
   margin: 0.5em 0;
 }
 
 .buttonContainer {
   margin: 1em 1em 2em;
   display: flex;
-  flex-flow: row wrap;
+  flex-flow: row nowrap;
   align-items: center;
-  justify-content: space-evenly;
+  justify-content: center;
 }
 
 .button {
-  font-size: calc(1em + 0.5vw);
+  font-size: calc(1.3em + 0.5vw);
   display: flex;
   border: none;
   padding: 0.5rem 1rem;
@@ -63,8 +72,6 @@
   margin: 0.5rem 2em;
   background: mistyrose;
   color: var(--richBlack);
-  /* font-family: "Nunito", sans-serif; */
-  /* font-weight: bold; */
   cursor: pointer;
   text-align: center;
   align-self: center;
@@ -77,14 +84,56 @@
 
 .button.signup {
   background: var(--mountbattenPink);
+  border: 3px solid var(--mountbattenPink);
   color: var(--platinum);
-  margin-right: 3em;
+  font-weight: bold;
+  margin: 1.5em;
 }
 
 .button.cancel {
   background: var(--platinum);
   color: var(--mountbattenPink);
   border: 3px solid var(--mountbattenPink);
-  margin-left: 1.5em;
+  margin: 1.5em;
   font-weight: bold;
+}
+
+@media only screen and (min-width: 481px) {
+  .signupForm {
+    margin: 2em;
+    padding: 2em 2em;
+  }
+
+  .signupLabel {
+    align-self: flex-start;
+  }
+
+  .signupInput {
+    width: calc(400px + 0.5vw);
+  }
+
+  .usernameContainer,
+  .emailContainer,
+  .passwordContainer {
+    margin: 0.5em 0;
+    align-items: center;
+    min-width: 330px;
+    width: 80%;
+  }
+
+  .buttonContainer {
+    justify-content: space-evenly;
+  }
+
+  .button {
+    font-size: calc(1em + 0.5vw);
+  }
+
+  .button.signup {
+    margin-right: 3em;
+  }
+
+  .button.cancel {
+    margin-left: 1.5em;
+  }
 }
