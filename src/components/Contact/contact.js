@@ -5,8 +5,10 @@ export function Contact(props) {
   return (
     <form autoComplete="off" className={styles.contactForm}>
       <div className={styles.header}>
-        <p>Have ideas or suggestions for the site, found or having an issue?</p>
-        <h1>Get in touch!</h1>
+        <p className={styles.headerP}>
+          Have ideas or suggestions for the site, found or having an issue?
+        </p>
+        <h1 className={styles.heading}>Get in touch!</h1>
       </div>
       <div className={styles.firstnameContainer}>
         <label htmlFor="firstname" className={styles.contactLabel}>

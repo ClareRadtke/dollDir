@@ -6,14 +6,14 @@ export function About(props) {
     <>
       <div className={styles.aboutContainer}>
         <div className={styles.header}>
-          <h1>About</h1>
+          <h1 className={styles.heading}>About</h1>
         </div>
         <div className={styles.aboutContent}>
-          <p>
+          <p className={styles.aboutP}>
             The Doll Directory is a passion project, created to combine as many
             needs and wants within the doll customising community as possible.
           </p>
-          <p>
+          <p className={styles.aboutP}>
             The idea was born in 2020 after having to click through the many
             folders within folders containing and organising my bookmarked doll
             related sites. Navigating from Etsy, to Instagram, to an artists
@@ -25,7 +25,7 @@ export function About(props) {
             provided the creative freedom that artists thrive on?
           </p>
 
-          <p>
+          <p className={styles.aboutP}>
             The ideas started flooding into my brain and caused quite a few
             sleepless nights as I pondered the ideas and how they could be
             executed with my extremely minial software development skills. After
@@ -35,7 +35,7 @@ export function About(props) {
             capabilities that I want to incorporate.
           </p>
 
-          <p>
+          <p className={styles.aboutP}>
             If you have any ideas that you would like to see please reach out
             through the contact page, I'd love to hear them!
           </p>

@@ -88,7 +88,7 @@ export function Photo(props) {
   return (
     <div className={styles.photoContainer}>
       <div className={styles.imgDiv}>
-        <img src={props.img} alt=""></img>
+        <img className={styles.photoPostImg} src={props.img} alt=""></img>
       </div>
       <PostInfo
         numLikes={props.likesCount}
@@ -128,15 +128,27 @@ export function PostInfo(props) {
   return (
     <div className={styles.postInfo}>
       <div className={styles.likesCommentsContainer}>
-        <img src={heartRed} alt="Red heart"></img>
-        <p id="numLikes">{props.numLikes}</p>
-        <img src={comment} alt="Square comment bubble"></img>
-        <p id="numComments">{props.numComments}</p>
+        <img
+          className={styles.likesCommentsImg}
+          src={heartRed}
+          alt="Red heart"
+        ></img>
+        <p className={styles.likesCommentsP} id="numLikes">
+          {props.numLikes}
+        </p>
+        <img
+          className={styles.likesCommentsImg}
+          src={comment}
+          alt="Square comment bubble"
+        ></img>
+        <p className={styles.likesCommentsP} id="numComments">
+          {props.numComments}
+        </p>
       </div>
       <div className={styles.posterInfo}>
         <h5 className={styles.posterUsername}>{props.username}</h5>
         {props.children && (
-          <h5 className={styles.posterComment}>{props.children}</h5>
+          <h5 className={styles.posterDesc}>{props.children}</h5>
         )}
         {props.date && <h5 className={styles.datePosted}>{props.date}</h5>}
       </div>

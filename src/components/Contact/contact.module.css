@@ -15,23 +15,27 @@
   flex-flow: column nowrap;
   align-items: center;
   background-color: var(--platinum);
-  margin: 2em;
-  padding: 2em 2em;
+  width: calc(100% - 2em);
+  height: fit-content;
+  padding: 1em;
 }
 .header {
   display: flex;
   flex-flow: column nowrap;
   align-items: center;
+  width: 100%;
+  justify-content: center;
 }
 
-.header h1 {
+.heading {
   font-size: calc(2em + 0.5vw);
   color: var(--richBlack);
 }
 
-.header p {
-  font-size: calc(1em + 0.3vw);
+.headerP {
+  font-size: calc(1em + 0.7vw);
   color: var(--richBlack);
+  text-align: center;
 }
 
 .contactLabel {
@@ -46,9 +50,9 @@
 .contactTextarea {
   line-height: 1.5;
   font-size: calc(1em + 0.5vw);
-  width: calc(400px + 0.5vw);
   background-color: var(--platinum);
   border: 2px solid var(--richBlack);
+  width: 95%;
 }
 
 .contactTextarea {
@@ -61,11 +65,20 @@
 .messageContainer {
   display: flex;
   flex-flow: column nowrap;
+  width: calc(100% - 2em);
   margin: 0.5em 0;
 }
 
+.buttonContainer {
+  margin: 1em 1em 2em;
+  display: flex;
+  flex-flow: row nowrap;
+  align-items: center;
+  justify-content: center;
+}
+
 .button {
-  font-size: calc(1em + 0.5vw);
+  font-size: calc(1.3em + 0.5vw);
   display: flex;
   border: none;
   padding: 0.5rem 1rem;
@@ -73,8 +86,6 @@
   margin: 0.5rem 2em;
   background: mistyrose;
   color: black;
-  /* font-family: "Nunito", sans-serif; */
-  /* font-weight: bold; */
   cursor: pointer;
   text-align: center;
   align-self: center;
@@ -89,12 +100,65 @@
   background: var(--mountbattenPink);
   color: var(--platinum);
   border: 4px solid var(--mountbattenPink);
+  font-weight: bold;
+  margin: 1.5em;
 }
 
 .button.cancel {
   background: var(--platinum);
   color: var(--mountbattenPink);
   border: 3px solid var(--mountbattenPink);
-  margin-left: 1.5em;
+  margin: 1.5em;
   font-weight: bold;
+}
+
+@media only screen and (min-width: 481px) {
+  .contactForm {
+    margin: 2em;
+    padding: 2em 2em;
+  }
+
+  .headerP {
+    font-size: calc(1em + 0.3vw);
+    text-align: left;
+  }
+
+  .contactLabel {
+    /* margin-right: 0.5em;
+    font-size: calc(1em + 0.5vw); */
+    width: calc(400px + 0.5vw);
+    align-self: flex-start;
+  }
+
+  .contactInput,
+  .contactTextarea {
+    /* font-size: calc(1em + 0.5vw); */
+    width: calc(400px + 0.5vw);
+  }
+
+  .firstnameContainer,
+  .lastnameContainer,
+  .emailContainer,
+  .messageContainer {
+    margin: 0.5em 0;
+    align-items: center;
+    min-width: 330px;
+    width: calc(400px + 0.5vw);
+  }
+
+  .buttonContainer {
+    justify-content: space-evenly;
+  }
+
+  .button {
+    font-size: calc(1em + 0.5vw);
+  }
+
+  .button.signup {
+    margin-right: 3em;
+  }
+
+  .button.cancel {
+    margin-left: 1.5em;
+  }
 }
