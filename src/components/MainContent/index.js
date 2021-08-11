@@ -8,7 +8,7 @@ import { Signup } from "../LoginSignup/signup";
 import { Login } from "../LoginSignup/login";
 import { Contact } from "../Contact/contact";
 import { About } from "../About/about";
-import { Home } from "../Home/home";
+import { Home } from "../HomePage/homePage";
 import { Dashboard } from "../Dashboard/dashboard";
 import { NewPost } from "../NewPost/newPost";
 import { NewPhoto } from "../NewPhoto/newPhoto";
